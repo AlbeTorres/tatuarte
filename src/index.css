@@ -1,13 +1,104 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn{
+    @apply bg-gray-600 px-5 py-2 rounded-lg shadow-lg font-semibold text-sm
+    text-white inline-block w-full hover:text-white hover:bg-gray-800 focus:outline-none
+    focus:ring focus:ring-offset-2 focus:ring-gray-800 focus:ring-opacity-50 active:bg-gray-900
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.input{
+    @apply py-1 px-5 border-2 border-gray-500 rounded-md shadow-sm 
 }
+
+.nav-menu{
+    @apply flex items-center flex-col fixed top-12 left-0 right-0 bg-gray-800 text-white w-full
+}
+
+
+.nav-transicion{
+    --clyppy: polygon(0 0, 0 0,100% 0,100% 0%);
+    clip-path: var(--clyppy);
+    transition: clip-path .3s;
+}
+
+.nav-item{
+    color: white;
+    --clyppy: polygon(0 0, 0 0,100% 0,100% 0%);
+    
+}
+
+.nav-item::after{
+    content: "";
+    display: block;
+    background: white;
+    margin-top: 3px;
+    width: 90%;
+    height: 3px;
+    clip-path: var(--clyppy);
+    transition: clip-path .3s;
+
+}
+
+.nav-item:hover{
+    --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
+
+}
+
+.nav-label{
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 5px;
+}
+
+.nav-label img{
+    height: 6vh;
+}
+
+
+.nav-input:checked + .nav-transicion{
+    --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
+}
+
+
+
+.social{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: 25px 25px;
+    margin: 0 10px;
+    /* background-color: black; */
+    border-radius: 5px;
+}
+
+.social-link.twitter{
+    background-image: url('../src/assets/twitter.svg');
+    
+}
+
+.social-link.facebook{
+    background-image: url('../src/assets/facebook.svg');
+
+}
+
+.social-link.instagram{
+    background-image: url('../src/assets/instagram.svg');
+    
+}
+
+.social-link.github{
+    background-image: url('../src/assets/github.svg');
+    
+}
+
