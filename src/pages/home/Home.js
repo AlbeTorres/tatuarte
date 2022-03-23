@@ -12,7 +12,7 @@ const Home = ()=>{
         <Fragment>
         <header className='flex items-center justify-between flex-wrap dark:bg-gray-800  w-full z-10 top-0'>
             <div className='flex-shrink-0'>
-                <Link to={"/home"} className="pl-2  font-bold italic tracking-wide underline decoration-wavy text-2xl tracking-tighter flex ">
+                <Link to={"/home"} className="pl-2  font-bold italic  underline decoration-wavy text-2xl tracking-tighter flex ">
                 <span className='font-serif'>tatto0</span>
                 <p className='uppercase font-mono'>Arte</p>
                 </Link>
