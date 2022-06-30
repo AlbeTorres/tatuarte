@@ -6,61 +6,19 @@
     @apply bg-gray-600 px-5 py-2 rounded-lg shadow-lg font-semibold text-sm
     text-white inline-block w-full hover:text-white hover:bg-gray-800 focus:outline-none
     focus:ring focus:ring-offset-2 focus:ring-gray-800 focus:ring-opacity-50 active:bg-gray-900
-
 }
 
 .input{
     @apply py-1 px-5 border-2 border-gray-500 rounded-md shadow-sm 
 }
 
-.nav-menu{
-    @apply flex items-center flex-col fixed top-12 left-0 right-0 bg-gray-800 text-white w-full
-}
 
 
-.nav-transicion{
-    --clyppy: polygon(0 0, 0 0,100% 0,100% 0%);
-    clip-path: var(--clyppy);
-    transition: clip-path .3s;
-}
 
-.nav-item{
-    color: white;
-    --clyppy: polygon(0 0, 0 0,100% 0,100% 0%);
-    
-}
-
-.nav-item::after{
-    content: "";
-    display: block;
-    background: white;
-    margin-top: 3px;
+.contenedor{
+    margin: 0 auto;
     width: 90%;
-    height: 3px;
-    clip-path: var(--clyppy);
-    transition: clip-path .3s;
-
-}
-
-.nav-item:hover{
-    --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
-
-}
-
-.nav-label{
-    cursor: pointer;
-    display: flex;
-    align-items: flex-end;
-    margin-top: 5px;
-}
-
-.nav-label img{
-    height: 6vh;
-}
-
-
-.nav-input:checked + .nav-transicion{
-    --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
+    max-width: 120rem;
 }
 
 

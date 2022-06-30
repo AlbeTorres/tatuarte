@@ -1,8 +1,9 @@
 import React,{Fragment,useState} from 'react'
-import UserOption from '../../components/layout/home/UserOption'
+import UserOption from '../../components/home/UserOption/UserOption'
 import {Link} from 'react-router-dom';
 import EstudioCard from '../../components/estudio/EstudioCard';
-import Busqueda from '../../components/layout/home/Busqueda';
+import Busqueda from '../../components/home/Busqueda/Busqueda';
+import '../../index.css'
 
 const Home = ()=>{
 
@@ -10,24 +11,22 @@ const Home = ()=>{
 
     return (
         <Fragment>
-        <header className='flex items-center justify-between flex-wrap dark:bg-gray-800  w-full z-10 top-0'>
-            <div className='flex-shrink-0'>
-                <Link to={"/home"} className="pl-2  font-bold italic  underline decoration-wavy text-2xl tracking-tighter flex ">
-                <span className='font-serif'>tatto0</span>
-                <p className='uppercase font-mono'>Arte</p>
-                </Link>
-            </div>
-            <nav className='UserOption'>
-                <UserOption logeado={logeado}/>
+        <header className='flex items-center justify-between contenedor p-3 '>
         
+            <Link to={"/home"}>
+                <h1 className='text-4xl font-thin font-sans md:text-6xl'>Tatú<span className='font-bold '>Arte</span></h1>
+            </Link>
 
-            </nav>
+           
+            <UserOption />
+        
         </header>
+
         <section className='w-10/12 mx-auto md:w-1/2 my-5'>
             <Busqueda/>
 
         </section>
-        <section className='lg:grid grid-cols-3 lg:gap-1 h-screen  justify-items-center overflow-y-scroll'>
+        <section className='lg:grid lg:grid-cols-3 lg:gap-1 h-screen justify-items-center overflow-y-scroll py-4 contenedor' >
             <EstudioCard/>
             <EstudioCard/>
             <EstudioCard/>
@@ -37,7 +36,8 @@ const Home = ()=>{
             <EstudioCard/>
 
         </section>
-        <footer className=' flex  flex-col lg:flex-row justify-center lg:items-center '>
+        
+        <footer className=' flex  flex-col lg:flex-row justify-center lg:items-center container'>
             <p className='text-center'>Made by Albert with <span>Love </span></p>
             <div className="social">
                 <a href="twitter" className="social-link twitter"></a>

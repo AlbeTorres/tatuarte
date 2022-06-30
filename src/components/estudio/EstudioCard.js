@@ -3,12 +3,14 @@ import React from 'react';
 const EstudioCard = ()=>{
 
     return(
-        <div className='flex items-center shadow-lg h-auto lg:max-w-fit p-3 max-h-25'>
-            <div className='bg-blue-500  rounded-full w-1/4 relative shadow-lg'>
-                <img src='logo192.png' alt=''>
+        <div className='flex items-center shadow-lg h-auto lg:max-w-fit p-3 max-h-25 border-2'>
 
-                </img>
+            <div className='bg-blue-500  rounded-full w-1/4 relative shadow-lg'>
+                <img src='img/1.jpg' alt=''/>
+
+                
             </div>
+            
             <div className=' w-full grid grid-cols-2 ml-2'>
                 <div className='col-span-2 ml-2'>
                     <h1 className='font-bold text-lg'>Nemesis Ink Studios</h1>

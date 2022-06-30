@@ -1,0 +1,84 @@
+.nav-menu{
+    @apply flex items-center flex-col absolute top-14 left-0 right-0 bg-gray-800 text-white w-full
+    md:top-16 
+}
+
+.nav-transicion{
+    --clyppy: polygon(0 0, 0 0,100% 0,100% 0%);
+    clip-path: var(--clyppy);
+    transition: clip-path .3s;
+}
+
+
+.nav-input:checked + .nav-transicion{
+    --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
+}
+
+.nav-hover{
+    @apply hover:bg-gray-500
+}
+
+.efecto{
+    transition-property: background-color ;
+    transition-duration: .3s;
+}
+
+@media (min-width:1024px)  {
+    .nav-menu{
+        flex-direction: unset;
+        align-items: unset;
+        position: static;
+        top: unset;
+        left: unset;
+        right: unset;
+        background-color: unset;
+        color: unset;
+        
+
+    }
+    .nav-transicion{
+        --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
+    }
+
+    .show{
+        visibility: hidden;
+    }
+
+    .opdesktop{
+        font-size: 1.5rem;
+    }
+
+
+    
+}
+
+
+/* .nav-item{
+    color: white;
+    --clyppy: polygon(0 0, 0 0,100% 0,100% 0%);
+    
+} */
+
+/* .nav-item::after{
+    content: "";
+    display: block;
+    background: white;
+    margin-top: 3px;
+    width: 90%;
+    height: 3px;
+    clip-path: var(--clyppy);
+    transition: clip-path .3s;
+
+} */
+
+/* .nav-item:hover{
+    --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
+
+} */
+
+/* .nav-label{
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 5px;
+} */
