@@ -14,39 +14,49 @@
     --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
 }
 
-.nav-hover{
-    @apply hover:bg-gray-500
-}
-
-.efecto{
-    transition-property: background-color ;
-    transition-duration: .3s;
-}
 
 @media (min-width:1024px)  {
     .nav-menu{
         flex-direction: unset;
-        align-items: unset;
+        align-items: center;
+        justify-content: center;
         position: static;
         top: unset;
         left: unset;
         right: unset;
         background-color: unset;
         color: unset;
-        
-
     }
     .nav-transicion{
         --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
     }
 
     .show{
-        visibility: hidden;
+        display: none;
     }
 
-    .opdesktop{
-        font-size: 1.5rem;
+    .enlace{
+        font-size: 1rem;
+        line-height: 1rem;
+    
+
     }
+
+    .nav-hover{
+        @apply hover:bg-gray-600 hover:rounded-sm hover:text-white rounded-sm  font-semibold
+    }
+    
+    .efecto{
+        transition-property: background-color ;
+        transition-duration: .3s;
+    }
+
+    .desktop{
+        height: 1.8rem;
+        width: .2rem;
+        background-color: gray;
+    }
+    
 
 
     
