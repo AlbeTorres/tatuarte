@@ -7,10 +7,10 @@ const UserOption = () => {
   return (
     <Fragment>
       {logueado ? (
-        <nav className="navbg px-2 py-1 rounded-md">
+        <nav className="navbg w-20 h-8 rounded-md">
 
           <label htmlFor="menu" className="cursor-pointer show ">
-            <img src="img/test.jpg" alt="" width="50px" height='50px' className="rounded-full w-10 h-10 object-cover " />
+            <img src="img/test.jpg" alt="" width="50px" height='50px' className="absolute rounded-full w-10 h-10 object-cover " />
           </label>
           <input type="checkbox" id="menu" className=" hidden nav-input" />
 
