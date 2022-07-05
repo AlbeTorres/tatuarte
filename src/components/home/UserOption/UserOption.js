@@ -7,18 +7,38 @@ const UserOption = () => {
   return (
     <Fragment>
       {logueado ? (
-        <nav className="navbg w-20 h-8 rounded-md">
+        <nav>
+          <div 
+            className="navbg w-16 h-6 rounded-md relative">
 
-          <label htmlFor="menu" className="cursor-pointer show ">
-            <img src="img/test.jpg" alt="" width="50px" height='50px' className="absolute rounded-full w-10 h-10 object-cover " />
-          </label>
-          <input type="checkbox" id="menu" className=" hidden nav-input" />
+            <label 
+              htmlFor="menu" 
+              className="cursor-pointer show ">
 
-          <ul className="nav-menu nav-transicion">
-            <li className="">Perfil</li>
+              <img 
+                src="img/test.jpg" 
+                alt="" 
+                width="50px"   
+                height='50px' 
+                className="rounded-full w-10 h-10 object-cover absolute -right-1 -top-2 " 
+              />
 
-            <li className="">Cerrar sesión</li>
-          </ul>
+            </label>
+          </div>
+            <input 
+              type="checkbox" 
+              id="menu" 
+              className="hidden nav-input" />
+
+            <ul 
+              className="nav-menu nav-transicion">
+              <li 
+                className="">Perfil</li>
+
+              <li 
+                className="">Cerrar sesión</li>
+            </ul>
+
         </nav>
       ) : (
         <nav>
