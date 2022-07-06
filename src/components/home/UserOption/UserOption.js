@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import "./userOption.css";
+import {FaCaretDown} from 'react-icons/fa';
 
 const UserOption = () => {
   const logueado = true;
@@ -13,7 +14,7 @@ const UserOption = () => {
 
             <label 
               htmlFor="menu" 
-              className="cursor-pointer show ">
+              className="cursor-pointer show w-full block h-full  ">
 
               <img 
                 src="img/test.jpg" 
@@ -22,8 +23,10 @@ const UserOption = () => {
                 height='50px' 
                 className="rounded-full w-10 h-10 object-cover absolute -right-1 -top-2 " 
               />
+              <FaCaretDown className="text-white text-center absolute top-1.5 left-1.5"/>
 
             </label>
+            
           </div>
             <input 
               type="checkbox" 
