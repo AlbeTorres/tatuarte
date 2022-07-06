@@ -26,7 +26,7 @@ const Home = ()=>{
             <Busqueda/>
 
         </section>
-        <section className='lg:grid lg:grid-cols-3 lg:gap-1 h-screen justify-items-center overflow-y-scroll py-4 contenedor' >
+        <section className='lg:grid lg:grid-cols-3 lg:gap-1 h-96 justify-items-center overflow-y-scroll py-4 contenedor' >
             <EstudioCard/>
             <EstudioCard/>
             <EstudioCard/>
