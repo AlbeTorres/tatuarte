@@ -11,10 +11,10 @@ const Home = ()=>{
 
     return (
         <Fragment>
-        <header className='flex items-center justify-between contenedor p-3 '>
+        <header className='flex items-center justify-between contenedor p-3 pt-10 '>
         
             <Link to={"/home"}>
-                <h1 className='text-4xl font-thin font-sans md:text-6xl'>Tatú<span className='font-bold '>Arte</span></h1>
+                <h1 className='text-4xl font-thin font-sans md:text-6xl bg-gray-600 text-white pl-1 rounded-sm'>Tatú<span className='font-bold text-gray-600 bg-white  '>Arte</span></h1>
             </Link>
 
            
