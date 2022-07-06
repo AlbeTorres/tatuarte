@@ -33,10 +33,19 @@ const UserOption = () => {
             <ul 
               className="nav-menu nav-transicion">
               <li 
-                className="">Perfil</li>
+                className="py-3 block w-full text-center
+                ">
+                  <Link to={"/home"}
+                    className='block w-full'>
+                    Perfil
+                  </Link>
+                </li>
 
               <li 
-                className="">Cerrar sesión</li>
+                className="py-3 block w-full text-center"><Link to={"/home"}
+                className='block w-full'>
+                Cerrar Sesión
+              </Link></li>
             </ul>
 
         </nav>

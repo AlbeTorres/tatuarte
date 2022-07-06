@@ -1,6 +1,6 @@
 .nav-menu{
     @apply flex items-center flex-col absolute top-14 left-0 right-0 bg-gray-600 text-white w-full
-    md:top-16 
+    md:top-16 z-50
 }
 
 .nav-transicion{
