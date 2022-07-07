@@ -5,3 +5,9 @@
 .contactar-estudio-header{
     grid-template-rows: 20% 80%;
 }
+
+.estudio-btn{
+    @apply bg-gray-600 px-5 py-2  shadow-lg font-semibold text-sm
+    text-white inline-block w-full hover:text-white hover:bg-gray-800 focus:outline-none
+    focus:ring focus:ring-offset-2 focus:ring-gray-800 focus:ring-opacity-50 active:bg-gray-900
+}
