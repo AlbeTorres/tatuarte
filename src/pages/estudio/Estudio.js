@@ -26,8 +26,8 @@ const Estudio = ()=>{
 
                 </div> 
                 
-                    <div className=" grid grid-row-2 contactar-estudio-header col-span-2  gap-1 ">
-                        <button className='estudio-btn'>Contactar</button>
+                    <div className="col-span-2">
+                        <button className='estudio-btn '>Contactar</button>
                         {/* <div className=" grid grid-cols-5 justify-items-center text-4xl m-auto text-gray-600 gap-4">
                             <a href=""><FaPinterestSquare></FaPinterestSquare></a>
                             <a href=""><FaTwitterSquare></FaTwitterSquare></a>
