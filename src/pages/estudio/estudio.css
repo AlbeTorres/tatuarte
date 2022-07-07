@@ -1,0 +1,7 @@
+.estudio-grid-header{
+    grid-template-rows: 65% 35%;
+}
+
+.contactar-estudio-header{
+    grid-template-rows: 20% 80%;
+}
