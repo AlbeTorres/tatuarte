@@ -8,6 +8,11 @@ import '../../index.css'
 const Home = ()=>{
 
     const[logeado, setLogeado]=useState(true);
+    const[visible, setVisible]=useState(false);
+
+    const menuSetVisible=()=>{
+        setVisible(!visible);
+    }
 
     return (
         <Fragment>
@@ -23,9 +28,18 @@ const Home = ()=>{
         </header>
 
         <section className='w-10/12 mx-auto md:w-1/2 my-5'>
-            <Busqueda/>
+            <Busqueda menuButton={menuSetVisible}/>
 
         </section>
+
+        { visible  ?  
+          <div className="absolute grid grid-rows-2 justify-items-center items-center rounded-md text-4xl right-10 left-10 z-10 text-gray-600 contacto-link h-28 shadow-md">
+                            
+                            <Link to={'/home'} className='estudio-btn text-center'>Añadir</Link>
+                            <Link to={'/home'} className='estudio-btn text-center'>Editar</Link>
+
+                        </div>   : null
+          } 
         <section className='lg:grid lg:grid-cols-3 lg:gap-1 h-96 justify-items-center overflow-y-scroll py-4 contenedor' >
             <EstudioCard/>
             <EstudioCard/>
