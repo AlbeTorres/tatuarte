@@ -1,5 +1,6 @@
 import React from 'react';
 import './estudioForm.css';
+import {FaPlus} from 'react-icons/fa';
 
 const Estudioform = () => {
 
@@ -13,10 +14,12 @@ const Estudioform = () => {
 
   return (
     <form onSubmit={onSubmit} className='flex flex-col items-center ' >
-        <figure className=' rounded-full w-20 h-20 relative '>
-            <img src='img/test.jpg' alt={''} className=' rounded-full w-full h-full object-cover' />
-            <input type={'image'} alt={''} className=' h-full w-full absolute z-10 top-0' /> 
-        </figure>
+        <label for='formImg' className=' rounded-full w-20 h-20 relative '>
+            <img  src='img/test.jpg' alt={''} className=' rounded-full w-full h-full object-cover'/>
+            <FaPlus className=' absolute bottom-1 right-2 text-white text-xl bg-gray-600 rounded-full p-1'></FaPlus>
+        </label>
+        <input id='formImg' type={'file'} alt={''} className='hidden h-full w-full'
+            accept='image/png, image/jpg '  /> 
         <div>
             <input type={ 'text '} placeholder={'Nombre Estudio'} />
         </div>
