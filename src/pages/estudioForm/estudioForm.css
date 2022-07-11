@@ -1,0 +1,11 @@
+.input-estudioForm_div{
+    @apply my-2 flex items-center pl-1 w-4/5 border-2 border-gray-500 rounded-md shadow-sm
+}
+
+.input-estudioForm{
+    @apply py-1  w-full
+}
+
+.input-icon{
+    @apply text-2xl p-1 text-gray-600
+}
