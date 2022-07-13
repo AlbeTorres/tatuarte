@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import{FaFilter} from 'react-icons/fa';
 import DropItem from './DropItem';
 
-const DropMenu = ({children,name, icon}) => {
+const DropMenu = ({name, icon}) => {
 
 
     const [open,setOpen]= useState(false);

@@ -81,9 +81,9 @@ const AuxNav = () => {
             
         </NavComponent>
 
-        <DropMenu  name={'Provincia'} icon={<FaCaretDown/>}>
+        <DropMenu name={'Provincia'} icon={<FaCaretDown/>}/>
 
-        </DropMenu>
+        
     </div>
   )
 }
