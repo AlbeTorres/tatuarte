@@ -19,19 +19,21 @@ const DropMenu = ({name, icon}) => {
   return (
     <div className=' bg-gray-600 rounded-md text-white w-fit m-auto mt-4 cursor-pointer'>
         <div className='p-2 flex items-center justify-center ' onClick={ ()=>setOpen(!open) } >
-            <p className='p-0'>    
+            <p className='ml-1'>    
                 {name}
             </p> 
-            <div className='mt-1'>
+            <div className='mt-1 ml-4'>
                 {icon} 
             </div> 
         </div>
-        <div>
+        
             { open && 
-                provinciaArray.map(provincia=><DropItem icon={provincia.icon} provincia={provincia.provincia} />)
+                <div className='rounded-md py-2 '>
+                {provinciaArray.map(provincia=><DropItem icon={provincia.icon} provincia={provincia.provincia} />) }
+                </div>
             }
 
-        </div>
+        
     </div>
   )
 }
