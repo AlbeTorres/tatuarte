@@ -28,7 +28,7 @@ const DropMenu = ({name, icon}) => {
         </div>
         
             { open && 
-                <div className='rounded-md py-2 '>
+                <div className='rounded-md pb-2 '>
                 {provinciaArray.map(provincia=><DropItem icon={provincia.icon} provincia={provincia.provincia} />) }
                 </div>
             }
