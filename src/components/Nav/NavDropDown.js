@@ -1,13 +1,22 @@
 import React from 'react';
-import DropdownItem from './DropdownItem';
 
 
-const NavDropDown = ({children}) => {
+
+const NavDropDown = ({children, style}) => {
+  
+  let heigth= null
+
+  if (style!=null){
+
+    heigth = style + 25
+    console.log(heigth)
+
+  }
+  
+  
   return (
-    <div className='dropdown'>
+    <div className='dropdown' style={{ height: heigth }}>
         {children}
-       
-        
     </div>
   )
 }
