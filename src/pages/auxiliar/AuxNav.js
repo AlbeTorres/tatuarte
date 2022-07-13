@@ -7,6 +7,7 @@ import NavDropDown from "../../components/Nav/NavDropDown";
 import DropdownItem from "../../components/Nav/DropdownItem";
 import { CSSTransition } from "react-transition-group";
 import '../../components/Nav/navbar.css'
+import DropMenu from "../../components/DropDownMenu/DropMenu";
 
 
 
@@ -28,55 +29,62 @@ const AuxNav = () => {
     }
 
   return (
-    <NavComponent>
-        <NavItem icon={<FaCaretDown/>} >
-          <NavDropDown style={menuHeigth}>
-            <CSSTransition 
-              in={activeMenu==='main'}
-              unmountOnExit
-              timeout={500}
-              classNames='menu-primary'
-              onEnter={calcHeigth}>
+    <div>
 
-                <div className="menu">
-                  <DropdownItem>Profile</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
+        `<NavComponent>
+            <NavItem icon={<FaCaretDown/>} >
+              <NavDropDown style={menuHeigth}>
+                <CSSTransition 
+                  in={activeMenu==='main'}
+                  unmountOnExit
+                  timeout={500}
+                  classNames='menu-primary'
+                  onEnter={calcHeigth}>
 
-                </div>
+                    <div className="menu">
+                      <DropdownItem>Profile</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>} onClick={onClick} menu={'filter'}>Filter</DropdownItem>
 
-            </CSSTransition>
+                    </div>
 
-            <CSSTransition 
-              in={activeMenu==='filter'}
-              unmountOnExit
-              timeout={500}
-              classNames='menu-secondary'
-              onEnter={calcHeigth}>
+                </CSSTransition>
 
-                <div className="menu">
-                  <DropdownItem  onClick={onClick} menu={'main'}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
-                  <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem> 
+                <CSSTransition 
+                  in={activeMenu==='filter'}
+                  unmountOnExit
+                  timeout={500}
+                  classNames='menu-secondary'
+                  onEnter={calcHeigth}>
 
-                </div>
+                    <div className="menu">
+                      <DropdownItem  onClick={onClick} menu={'main'}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem>
+                      <DropdownItem lefticon={<FaFilter/>}>Filter</DropdownItem> 
 
-            </CSSTransition>
-          </NavDropDown>
-        </NavItem>
-        
-        
-        
-    </NavComponent>
+                    </div>
+
+                </CSSTransition>
+              </NavDropDown>
+            </NavItem>
+            
+            
+            
+        </NavComponent>
+
+        <DropMenu  name={'Provincia'} icon={<FaCaretDown/>}>
+
+        </DropMenu>
+    </div>
   )
 }
 
