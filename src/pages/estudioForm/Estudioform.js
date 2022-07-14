@@ -19,7 +19,7 @@ const Estudioform = () => {
     const municipioArray= [
         {icon:<FaRegMap/>,text:{type:'municipio', name:'Artemisa'}},
         {icon:<FaRegMap/>,text:{type:'municipio', name:'Candelaria'}},
-        {icon:<FaRegMap/>,text:{type:'municipio', name:'Bahía Honda'}},
+        {icon:<FaRegMap/>,text:{type:'municipio', name:'B. Honda'}},
         {icon:<FaRegMap/>,text:{type:'municipio', name:'Guanaja'}},
         {icon:<FaRegMap/>,text:{type:'municipio', name:'Alquizar'}},
         

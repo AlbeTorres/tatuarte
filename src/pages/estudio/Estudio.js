@@ -10,7 +10,7 @@ const Estudio = ()=>{
 
     const [visible, setVisible]=useState(false);
 
-    const user= false;
+    const user= true;
 
     return (
         <Fragment>
