@@ -1,12 +1,16 @@
 import React,{useState} from 'react';
-import{FaFilter} from 'react-icons/fa';
 import DropItem from './DropDownItem';
 
-const DropMenu = ({name, icon,arreglo}) => {
+const DropMenu = ({name, icon,arreglo, funcion}) => {
 
 
     const [open,setOpen]= useState(false);
 
+    const onSelected=(itemSelect)=>{
+
+        funcion(itemSelect);
+        setOpen(!open);
+    }
     
 
   return (
@@ -22,7 +26,7 @@ const DropMenu = ({name, icon,arreglo}) => {
         
             { open && 
                 <div className='absolute rounded-md bg-gray-600 flex items-center flex-col w-2/4  '>
-                {arreglo.map(item=><DropItem icon={item.icon} provincia={item.text} />) }
+                {arreglo.map(item=><DropItem icon={item.icon} itemSelect={item.text} funcion={onSelected} />) }
                 </div>
             }
 

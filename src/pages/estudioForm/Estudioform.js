@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './estudioForm.css';
 import {FaPlus,FaRegCompass,FaRegMap, FaPinterestSquare, FaTwitterSquare,
     FaWhatsappSquare, FaFacebookSquare,FaInstagramSquare, FaPaintBrush,FaCaretDown} from 'react-icons/fa';
@@ -8,21 +8,47 @@ import DropMenu from '../../components/dropDownMenu/DropDownMenu';
 const Estudioform = () => {
 
     const provinciaArray= [
-        {icon: <FaRegCompass/>,text:'Artemisa'},
-        {icon: <FaRegCompass/>,text:'La Habana'},
-        {icon:<FaRegCompass/>,text:'Pinar del Río'},
-        {icon: <FaRegCompass/>,text:'Mayabeque'},
-        {icon: <FaRegCompass/>,text:'Matánzas'},
+        {icon: <FaRegCompass/>,text:{type:'provincia', name:'Artemisa'} },
+        {icon: <FaRegCompass/>,text:{type:'provincia', name:'Mayabeque'}},
+        {icon: <FaRegCompass/>,text:{type:'provincia', name:'P. del Río'}},
+        {icon: <FaRegCompass/>,text:{type:'provincia', name:'La Habana'}},
+        {icon: <FaRegCompass/>,text:{type:'provincia', name:'Matanzas'}},
+        
         
     ];
     const municipioArray= [
-        {icon:<FaRegMap/>,text:'Artemisa'},
-        {icon:<FaRegMap/>,text:'San Cristobal'},
-        {icon:<FaRegMap/>,text:'Candelaria'},
-        {icon:<FaRegMap/>,text:'Alquizar'},
-        {icon:<FaRegMap/>,text:'Las Cañas'},
+        {icon:<FaRegMap/>,text:{type:'municipio', name:'Artemisa'}},
+        {icon:<FaRegMap/>,text:{type:'municipio', name:'Candelaria'}},
+        {icon:<FaRegMap/>,text:{type:'municipio', name:'Bahía Honda'}},
+        {icon:<FaRegMap/>,text:{type:'municipio', name:'Guanaja'}},
+        {icon:<FaRegMap/>,text:{type:'municipio', name:'Alquizar'}},
+        
         
     ];
+
+    const [filtro, setFiltro] = useState({
+        provincia:'provincia',
+        municipio: 'municipio'
+    });
+
+    const onSelect =(itemSelect)=>{
+
+        if(itemSelect.type !== 'municipio'){
+            setFiltro({
+                ...filtro,
+                provincia:itemSelect.name
+    
+            })
+        }else{
+            setFiltro({
+                ...filtro,
+                municipio:itemSelect.name
+    
+            })
+        }
+        
+
+    }
 
 
     const onSubmit=e=>{
@@ -34,8 +60,8 @@ const Estudioform = () => {
 
   return (
     <form onSubmit={onSubmit} className='flex flex-col items-center justify-center  mt-4 ' >
-        <div className=''>
-            <label htmlFor='formImg' className='rounded-full w-20 h-20 relative block '>
+        <div className=' '>
+            <label htmlFor='formImg' className='rounded-full w-20 h-20 relative block cursor-pointer'>
                 <img  src='img/test.jpg' alt={''} className=' rounded-full w-full h-full object-cover'/>
                 <FaPlus className=' absolute bottom-1 right-2 text-white text-xl bg-gray-600 rounded-full p-1'></FaPlus>
             </label>
@@ -54,8 +80,8 @@ const Estudioform = () => {
         </div>
 
         <div className='relative w-full flex items-center justify-between p-4 '>
-                <DropMenu icon={<FaCaretDown/>} name={'provincia'} arreglo={provinciaArray} />
-                <DropMenu icon={<FaCaretDown/>} name={'Municipio'} arreglo={municipioArray} />
+                <DropMenu icon={<FaCaretDown/>} name={filtro.provincia} arreglo={provinciaArray} funcion={onSelect} />
+                <DropMenu icon={<FaCaretDown/>} name={filtro.municipio} arreglo={municipioArray} funcion={onSelect}/>
         </div>
         
         
