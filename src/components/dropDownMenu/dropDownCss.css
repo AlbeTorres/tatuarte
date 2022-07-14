@@ -1,0 +1,6 @@
+.dropdownme{
+    transition: background var(--speed);
+}
+.dropdownme:hover{
+    @apply bg-slate-400
+}
