@@ -2,19 +2,12 @@ import React,{useState} from 'react';
 import{FaFilter} from 'react-icons/fa';
 import DropItem from './DropDownItem';
 
-const DropMenu = ({name, icon}) => {
+const DropMenu = ({name, icon,arreglo}) => {
 
 
     const [open,setOpen]= useState(false);
 
-    const provinciaArray= [
-        {icon: <FaFilter/>,provincia:'Artemisa'},
-        {icon: <FaFilter/>,provincia:'La Habana'},
-        {icon:<FaFilter/>,provincia:'Pinar del Río'},
-        {icon: <FaFilter/>,provincia:'Mayabeque'},
-        {icon: <FaFilter/>,provincia:'Matánzas'},
-        
-    ];
+    
 
   return (
     <div className=' bg-gray-600 rounded-md text-white w-fit cursor-pointer'>
@@ -29,7 +22,7 @@ const DropMenu = ({name, icon}) => {
         
             { open && 
                 <div className='absolute rounded-md bg-gray-600 flex items-center flex-col w-2/4  '>
-                {provinciaArray.map(provincia=><DropItem icon={provincia.icon} provincia={provincia.provincia} />) }
+                {arreglo.map(item=><DropItem icon={item.icon} provincia={item.text} />) }
                 </div>
             }
 

@@ -7,6 +7,23 @@ import DropMenu from '../../components/dropDownMenu/DropDownMenu';
 
 const Estudioform = () => {
 
+    const provinciaArray= [
+        {icon: <FaRegCompass/>,text:'Artemisa'},
+        {icon: <FaRegCompass/>,text:'La Habana'},
+        {icon:<FaRegCompass/>,text:'Pinar del Río'},
+        {icon: <FaRegCompass/>,text:'Mayabeque'},
+        {icon: <FaRegCompass/>,text:'Matánzas'},
+        
+    ];
+    const municipioArray= [
+        {icon:<FaRegMap/>,text:'Artemisa'},
+        {icon:<FaRegMap/>,text:'San Cristobal'},
+        {icon:<FaRegMap/>,text:'Candelaria'},
+        {icon:<FaRegMap/>,text:'Alquizar'},
+        {icon:<FaRegMap/>,text:'Las Cañas'},
+        
+    ];
+
 
     const onSubmit=e=>{
             e.preventDefault();
@@ -37,8 +54,8 @@ const Estudioform = () => {
         </div>
 
         <div className='relative w-full flex items-center justify-between p-4 '>
-                <DropMenu icon={<FaCaretDown/>} name={'provincia'}  />
-                <DropMenu icon={<FaCaretDown/>} name={'Municipio'}  />
+                <DropMenu icon={<FaCaretDown/>} name={'provincia'} arreglo={provinciaArray} />
+                <DropMenu icon={<FaCaretDown/>} name={'Municipio'} arreglo={municipioArray} />
         </div>
         
         
