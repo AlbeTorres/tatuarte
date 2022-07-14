@@ -8,11 +8,21 @@
 
 .estudio-btn{
     @apply bg-gray-600 px-5 py-2 block m-auto rounded-md shadow-lg font-semibold text-sm
-    text-white  w-4/5 hover:text-white hover:bg-gray-800 
+    text-white  w-full hover:text-white hover:bg-gray-800 
 }
 
 .contacto-link{
     background-color: white;
    
+    
+}
+
+.estudio-header{
+    margin-top: 2rem;
+}
+
+.estudio-card{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     
 }

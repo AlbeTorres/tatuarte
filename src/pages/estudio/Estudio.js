@@ -14,7 +14,7 @@ const Estudio = ()=>{
 
     return (
         <Fragment>
-            <div className="grid grid-cols-2 h-44 items-center estudio-grid-header  ">
+            <div className="grid grid-cols-2 h-44 items-center estudio-grid-header contenedor estudio-header">
                 <figure className='rounded-full w-20 h-20 m-auto '>
                     <img src="img/test.jpg" alt="" className='w-full h-full rounded-full object-cover' />
                 </figure> 
