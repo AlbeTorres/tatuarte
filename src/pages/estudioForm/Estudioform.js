@@ -15,7 +15,7 @@ const Estudioform = () => {
 
 
   return (
-    <form onSubmit={onSubmit} className='flex flex-col items-center justify-center h-screen ' >
+    <form onSubmit={onSubmit} className='flex flex-col items-center justify-center  mt-4 ' >
         <div className=''>
             <label htmlFor='formImg' className='rounded-full w-20 h-20 relative block '>
                 <img  src='img/test.jpg' alt={''} className=' rounded-full w-full h-full object-cover'/>
@@ -25,7 +25,9 @@ const Estudioform = () => {
                 accept='image/png, image/jpg '  /> 
         </div>
 
+    <div className="border-2 border-gray-600 w-4/5 flex items-center justify-center flex-col my-2 rounded-md shadow-lg">
 
+        <h1 className='text-2xl text-gray-600 text-center '>Estudio</h1>
         <div className=' input-estudioForm_div'>
             <FaPaintBrush className='input-icon' ></FaPaintBrush>
             <input className='input-estudioForm' type={ 'text '} placeholder={'Nombre Estudio'} />
@@ -39,6 +41,9 @@ const Estudioform = () => {
             <FaRegMap className='input-icon'></FaRegMap>
             <input className='input-estudioForm' type={ 'text'}  placeholder={'Municipio'} />
         </div>
+    </div>
+    <div className="border-2 border-gray-600 w-4/5 flex items-center justify-center flex-col my-2 rounded-md shadow-lg">
+        <h1 className='text-2xl text-gray-600 text-center '>Contácto</h1>
         <div className=' input-estudioForm_div'>
             <FaPinterestSquare className='input-icon'></FaPinterestSquare>
             <input className='input-estudioForm' type={'url'} placeholder={'Pinteres'}/>
@@ -56,14 +61,15 @@ const Estudioform = () => {
             <input className='input-estudioForm' type={'url'} placeholder={'Facebook'}/>
         </div>
         <div className=' input-estudioForm_div'>
-            <FaWhatsappSquare className='input-icon'></FaWhatsappSquare>
-            <input className='input-estudioForm' type={'url'} placeholder={'Whatsapp'}/>
+                <FaWhatsappSquare className='input-icon'></FaWhatsappSquare>
+                <input className='input-estudioForm' type={'url'} placeholder={'Whatsapp'}/>
         </div>
-        <div className='w-4/5 my-2'>
-            <input className='btn' type={'submit'} value='Aceptar' />
-            <Link to={'/estudio'} className='btn text-center my-2'>Cancelar</Link>
-        </div>
+    </div>
         
+    <div className='w-4/5 my-2'>
+            <input className='btn' type={'submit'} value='Aceptar' />
+            <Link to={'/estudio'} className='btn-black text-center my-2'>Cancelar</Link>
+    </div>
 
 
     </form>
