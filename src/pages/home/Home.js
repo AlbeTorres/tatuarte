@@ -43,7 +43,7 @@ const Home = ()=>{
         <section className='grid gap-4 items-center  auto-rows-min    md:grid-cols-2 lg:grid-cols-3 md:gap-4  h-screen lg:h-96  overflow-y-scroll p-1  w-11/12  md:w-4/5 mx-auto ' >
             <EstudioCard name={'La Tiza'} img={'img/test.jpg '} />
             <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/1.jpg '}/>
-            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/1.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
            
            
             
