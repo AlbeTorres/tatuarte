@@ -15,11 +15,11 @@ const Home = ()=>{
     }
 
     return (
-        <Fragment>
+        <div className='bg-gray-50'>
         <header className='flex items-center justify-between contenedor p-3 pt-10 '>
         
             <Link to={"/home"}>
-                <h1 className='text-4xl font-thin font-sans md:text-6xl bg-gray-600 text-white pl-1 rounded-sm'>Tatú<span className='font-bold text-gray-600 bg-white  '>Arte</span></h1>
+                <h1 className='text-4xl font-thin font-sans md:text-6xl bg-gray-600 text-white pl-1 rounded-sm'>Tatú<span className='font-bold text-gray-600 bg-gray-50  '>Arte</span></h1>
             </Link>
 
            
@@ -40,14 +40,16 @@ const Home = ()=>{
 
                         </div>   : null
           } 
-        <section className='lg:grid lg:grid-cols-3 lg:gap-1 h-96 justify-items-center overflow-y-scroll py-4 contenedor' >
-            <EstudioCard/>
-            <EstudioCard/>
-            <EstudioCard/>
-            <EstudioCard/>
-            <EstudioCard/>
-            <EstudioCard/>
-            <EstudioCard/>
+        <section className='grid gap-4  md:grid-cols-2 lg:grid-cols-3 md:gap-4  h-screen lg:h-96  justify-items-center overflow-y-scroll p-1   w-4/5 mx-auto ' >
+            <EstudioCard name={'La Tiza'}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'}/>
+            <EstudioCard name={'La Tiza'}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'}/>
+            <EstudioCard name={'La Tiza'}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'}/>
+            <EstudioCard name={'La Tiza'}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'}/>
+            
 
         </section>
         
@@ -61,7 +63,7 @@ const Home = ()=>{
             </div>
         </footer>
 
-        </Fragment>
+        </div>
     );
 }
 

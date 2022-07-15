@@ -1,0 +1,13 @@
+.datos{
+    grid-template-rows: 40% 30% 25%;
+}
+
+.card{
+    grid-template-columns: 40% 60%;
+}
+
+.btn-datos{
+    @apply bg-gray-600  rounded-md shadow-lg font-semibold text-sm border-2 border-gray-600
+    text-white inline-block w-full hover:text-white hover:bg-gray-800 focus:outline-none
+    focus:ring focus:ring-offset-2 focus:ring-gray-800 focus:ring-opacity-50 active:bg-gray-900
+}

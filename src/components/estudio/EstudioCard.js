@@ -1,28 +1,31 @@
 import React from 'react';
+import {FaCompass, FaMap} from 'react-icons/fa';
+import './estudioCard.css';
 
-const EstudioCard = ()=>{
+const EstudioCard = ({name})=>{
 
     return(
-        <div className='flex items-center shadow-lg h-auto lg:max-w-fit p-3 max-h-25 border-2'>
+        <div className='grid card items-center shadow-lg bg-white rounded-md '>
 
-            <div className='bg-blue-500  rounded-full w-1/4 relative shadow-lg'>
-                <img src='img/1.jpg' alt=''/>
-
-                
+            <div className='rounded-md w-full p-2 h-36  '>
+                <img src='img/test.jpg ' alt='' className='h-full rounded-md object-cover'/>
             </div>
             
-            <div className=' w-full grid grid-cols-2 ml-2'>
-                <div className='col-span-2 ml-2'>
-                    <h1 className='font-bold text-lg'>Nemesis Ink Studios</h1>
-                    <div className='mt-2 truncate hover:text-clip text-left indent-0 text-sm mb-2'>
-                        <p className=''><span className='mr-1 font-semibold'>P:</span>Santiago de Cuba</p>
-                        <p className=''><span className='mr-1 font-semibold'>M:</span>Santiago de Cuba</p>
+            <div className='p-4 w-full h-36   grid grid-rows-3'>
+                
+                <h1 className='font-bold  text-base leading-none  '>{name}</h1>
+                <div className='truncate hover:text-clip text-left indent-0 text-xs '>
+                    <div className="flex items-center  ">
+                        <FaCompass className='text-gray-600'/>
+                        <p className='ml-1'>Santiago de Cuba</p>
+                    </div>
+                    <div className="flex items-center ">
+                        <FaMap className='text-gray-600'/>
+                        <p className='ml-1'>Santiago de Cuba</p>
+                    </div> 
+                </div>
+                <button className='btn-datos'>ver</button>
 
-                    </div>   
-                </div>
-                <div className='grid grid-cols-9 grid-flow-col col-start-2'>
-                    <button className='btn col-start-4 col-span-7'>ver</button>
-                </div>
             </div>
         </div>
     );
