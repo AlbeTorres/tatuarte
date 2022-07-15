@@ -2,13 +2,13 @@ import React from 'react';
 import {FaCompass, FaMap} from 'react-icons/fa';
 import './estudioCard.css';
 
-const EstudioCard = ({name})=>{
+const EstudioCard = ({name, img})=>{
 
     return(
-        <div className='grid card items-center shadow-lg bg-white rounded-md '>
+        <div className='grid card  justify-start items-center shadow-lg bg-white rounded-md h-40 '>
 
             <div className='rounded-md w-full p-2 h-36  '>
-                <img src='img/test.jpg ' alt='' className='h-full rounded-md object-cover'/>
+                <img src={img} alt='' className='h-full rounded-md object-cover  '/>
             </div>
             
             <div className='p-4 w-full h-36   grid grid-rows-3'>
