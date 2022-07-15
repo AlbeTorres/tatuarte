@@ -10,7 +10,7 @@ const UserOption = () => {
       {logueado ? (
         <nav>
           <div 
-            className="navbg w-16 h-6 rounded-md relative">
+            className="navbg w-16 h-6 rounded-md relative md:w-20 md:h-8 md:rounded-lg ">
 
             <label 
               htmlFor="menu" 
@@ -21,9 +21,9 @@ const UserOption = () => {
                 alt="" 
                 width="50px"   
                 height='50px' 
-                className="rounded-full w-10 h-10 object-cover absolute -right-1 -top-2 " 
+                className="rounded-full w-10 h-10 object-cover absolute -right-1 -top-2 md:w-14 md:h-14 md:-top-3 " 
               />
-              <FaCaretDown className="text-white text-center absolute top-1.5 left-1.5"/>
+              <FaCaretDown className="text-white text-center absolute top-1 left-1.5 md:top-2 md:text-lg  "/>
 
             </label>
             
@@ -58,7 +58,7 @@ const UserOption = () => {
             <img
               src="img/bx-menu.svg"
               alt="menu-icon"
-              className="w-8 md:w-10"
+              className="w-8 md:w-12  "
             />
           </label>
           <input type="checkbox" id="menu" className=" hidden nav-input" />
