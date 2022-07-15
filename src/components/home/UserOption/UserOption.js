@@ -4,7 +4,7 @@ import "./userOption.css";
 import {FaCaretDown} from 'react-icons/fa';
 
 const UserOption = () => {
-  const logueado = true;
+  const logueado = false;
   return (
     <Fragment>
       {logueado ? (
@@ -14,7 +14,7 @@ const UserOption = () => {
 
             <label 
               htmlFor="menu" 
-              className="cursor-pointer show w-full block h-full  ">
+              className="cursor-pointer  w-full block h-full  ">
 
               <img 
                 src="img/test.jpg" 
@@ -34,7 +34,7 @@ const UserOption = () => {
               className="hidden nav-input" />
 
             <ul 
-              className="nav-menu nav-transicion">
+              className="nav-menu nav-transicion ">
               <li 
                 className="py-3 block w-full text-center
                 ">
@@ -62,7 +62,7 @@ const UserOption = () => {
             />
           </label>
           <input type="checkbox" id="menu" className=" hidden nav-input" />
-          <ul className="nav-menu nav-transicion">
+          <ul className="nav-menu nav-transicion nav-menu-false nav-transicion-false">
             <li className="p-2 w-full text-center nav-hover efecto">
               <Link to={"/"} className="w-full block md:text-2xl enlace">
                 Acceder

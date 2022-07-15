@@ -20,7 +20,7 @@
 
 
 @media (min-width:1024px)  {
-    .nav-menu{
+    .nav-menu-false{
         flex-direction: unset;
         align-items: center;
         justify-content: center;
@@ -31,9 +31,10 @@
         background-color: unset;
         color: unset;
     }
-    .nav-transicion{
+    .nav-transicion-false{
         --clyppy: polygon(0 0, 0 100%,100% 100%,100% 0%);
     }
+    
 
     .show{
         display: none;
