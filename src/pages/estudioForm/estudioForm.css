@@ -3,7 +3,7 @@
 }
 
 .input-estudioForm{
-    @apply py-1  w-full
+    @apply py-1  w-full focus:outline-none
 }
 
 .input-icon{

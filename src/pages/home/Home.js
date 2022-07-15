@@ -27,7 +27,7 @@ const Home = ()=>{
         
         </header>
 
-        <section className='w-10/12 mx-auto md:w-1/2 my-5'>
+        <section className='w-2/3  mx-auto md:w-3/12 my-5  '>
             <Busqueda menuButton={menuSetVisible}/>
 
         </section>

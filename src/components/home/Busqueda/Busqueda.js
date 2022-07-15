@@ -1,5 +1,5 @@
 import React from 'react';
-import{FaFilter} from 'react-icons/fa';
+import{FaSearch,FaFilter} from 'react-icons/fa';
 
 const Busqueda = ({menuButton})=>{
 
@@ -8,10 +8,14 @@ const Busqueda = ({menuButton})=>{
     }
 
     return(
-        <div className='flex'>
+        <div className='flex items-center justify-center w-full'>
+            <div className="mr-2 flex items-center pl-1 w-full border-2 border-gray-500 rounded-md shadow-sm">
+                <FaSearch className='text-2xl p-1 text-gray-600'></FaSearch>
+                <input type='search' placeholder='Buscar' className='py-1  w-full focus:outline-none ' />
 
-            <input type='search' placeholder='Buscar...' className='shadow-lg rounded-lg w-full mr-4 px-2 py-1 border-2 border-gray-600' />
-            <button className='flex rounded-md p-2  bg-gray-600  shadow-lg items-center justify-center border-2 border-gray-600 ' onClick={onClick}><FaFilter className='text-white'/></button>
+            </div>
+            <button className='rounded-md p-2 bg-gray-600 shadow-lg border-2 border-gray-600 hover:text-white hover:bg-gray-800 focus:outline-none
+    active:bg-gray-900' onClick={onClick}><FaFilter className='text-white'/></button>
         </div>
     );
 
