@@ -40,7 +40,7 @@ const Home = ()=>{
 
                         </div>   : null
           } 
-        <section className='grid gap-4 items-center  auto-rows-min    md:grid-cols-2 lg:grid-cols-3 md:gap-4  h-screen lg:h-96  overflow-y-scroll p-1  w-11/12  md:w-4/5 mx-auto ' >
+        <section className='grid gap-4 items-center  auto-rows-min    md:grid-cols-2 lg:grid-cols-3 md:gap-4  sectionHeigth  overflow-y-scroll p-1  w-11/12  md:w-4/5 mx-auto ' >
             <EstudioCard name={'La Tiza'} img={'img/test.jpg '} />
             <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/1.jpg '}/>
             <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
@@ -61,7 +61,7 @@ const Home = ()=>{
         </section>
         
         <footer className=' flex  flex-col lg:flex-row justify-center lg:items-center
-          bg-gray-600 text-gray-50 mx-auto h-18'>
+          bg-gray-600 text-gray-50 mx-auto h-18 mt-2'>
             <p className='text-center'>Made by Albert with <span>Love </span></p>
             <div className="social">
                 <a href="twitter" className="social-link twitter"></a>

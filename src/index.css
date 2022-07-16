@@ -17,9 +17,12 @@
     @apply py-1 px-3 border-2 border-gray-500 rounded-md shadow-sm 
 }
 
-
 .sectionHeigth{
-    height: 80%;
+    height: 76vh;
+}
+@media (min-width:1024px) {
+    
+    
 }
 
 
