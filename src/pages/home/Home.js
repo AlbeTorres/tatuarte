@@ -44,13 +44,24 @@ const Home = ()=>{
             <EstudioCard name={'La Tiza'} img={'img/test.jpg '} />
             <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/1.jpg '}/>
             <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
+            <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/test.jpg '}/>
            
            
             
 
         </section>
         
-        <footer className=' flex  flex-col lg:flex-row justify-center lg:items-center container'>
+        <footer className=' flex  flex-col lg:flex-row justify-center lg:items-center
+          bg-gray-600 text-gray-50 mx-auto h-18'>
             <p className='text-center'>Made by Albert with <span>Love </span></p>
             <div className="social">
                 <a href="twitter" className="social-link twitter"></a>
