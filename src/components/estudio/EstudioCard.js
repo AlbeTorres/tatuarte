@@ -24,7 +24,7 @@ const EstudioCard = ({name, img})=>{
                         <p className='ml-1'>Santiago de Cuba</p>
                     </div> 
                 </div>
-                <button className='btn-datos'>ver</button>
+                <button className='btn-datos my-1 mr-2'>ver</button>
 
             </div>
         </div>
