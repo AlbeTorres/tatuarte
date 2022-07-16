@@ -4,7 +4,7 @@ import "./userOption.css";
 import {FaCaretDown} from 'react-icons/fa';
 
 const UserOption = () => {
-  const logueado = false;
+  const logueado = true;
   return (
     <Fragment>
       {logueado ? (
@@ -34,18 +34,18 @@ const UserOption = () => {
               className="hidden nav-input" />
 
             <ul 
-              className="nav-menu nav-transicion ">
+              className="nav-menu nav-transicion rounded-md   ">
               <li 
-                className="py-3 block w-full text-center
+                className="py-3 block w-full text-center rounded-md hover:bg-gray-800 hover:text-gray-50
                 ">
                   <Link to={"/home"}
                     className='block w-full'>
                     Perfil
                   </Link>
                 </li>
-
+                <div className="h-px w-11/12 bg-gray-50"></div>
               <li 
-                className="py-3 block w-full text-center"><Link to={"/home"}
+                className="py-3 block w-full text-center rounded-md hover:bg-gray-800 hover:text-gray-50"><Link to={"/home"}
                 className='block w-full'>
                 Cerrar Sesión
               </Link></li>
@@ -62,13 +62,13 @@ const UserOption = () => {
             />
           </label>
           <input type="checkbox" id="menu" className=" hidden nav-input" />
-          <ul className="nav-menu nav-transicion nav-menu-false nav-transicion-false">
+          <ul className="nav-menu nav-transicion nav-menu-false nav-transicion-false ">
             <li className="p-2 w-full text-center nav-hover efecto">
               <Link to={"/"} className="w-full block md:text-2xl enlace">
                 Acceder
               </Link>
             </li>
-            <div className="h-px w-11/12 bg-white desktop"></div>
+            <div className="h-px w-11/12 bg-white desktop mx-1"></div>
             <li className="p-2 w-full text-center nav-hover efecto">
               <Link
                 to={"/nueva-cuenta"}
