@@ -15,16 +15,16 @@ const Estudio = ()=>{
     return (
         <Fragment>
             <div className="grid grid-cols-2 h-44 items-center estudio-grid-header contenedor estudio-header">
-                <figure className='rounded-full w-20 h-20 m-auto '>
+                <figure className='rounded-full w-20 h-20 m-auto md:w-28 md:h-28 lg:w-32 lg:h-32 '>
                     <img src="img/test.jpg" alt="" className='w-full h-full rounded-full object-cover' />
                 </figure> 
                 <div className=' grid grid-row-3 gap-1'>
-                    <h1 className='text-base font-semibold'>Némesis Ink Tattoo Estudio</h1>
-                    <div className="flex items-center text-xs">
+                    <h1 className='text-base md:text-xl font-semibold'>Némesis Ink Tattoo Estudio</h1>
+                    <div className="flex items-center text-xs md:text-base">
                     <FaRegCompass className=' mr-1'></FaRegCompass>
                         <p >La Habana</p>
                     </div>
-                    <div className="flex items-center text-xs ">
+                    <div className="flex items-center text-xs md:text-base">
                         <FaRegMap  className=' mr-1'></FaRegMap>
                         <p>Guanabacoa</p>
                     </div>
