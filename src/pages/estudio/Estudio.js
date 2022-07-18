@@ -5,16 +5,17 @@ import {FaRegCompass,FaRegMap, FaPinterestSquare, FaTwitterSquare,
 import './estudio.css'
 import '../../index.css'
 import { Link } from 'react-router-dom';
+import Contacto from '../../components/estudio/Contacto';
 
 const Estudio = ()=>{
 
     const [visible, setVisible]=useState(false);
 
-    const user= true;
+    const user= false;
 
     return (
         <Fragment>
-            <div className="grid grid-cols-2 h-44 items-center estudio-grid-header contenedor estudio-header">
+            <div className="grid grid-cols-2 h-44 items-center estudio-grid-header contenedor estudio-header relative">
                 <figure className='rounded-full w-20 h-20 m-auto md:w-28 md:h-28 lg:w-32 lg:h-32 '>
                     <img src="img/test.jpg" alt="" className='w-full h-full rounded-full object-cover' />
                 </figure> 
@@ -31,7 +32,7 @@ const Estudio = ()=>{
 
                 </div> 
                 
-                    <div className="col-span-2">
+                <div className="col-span-2 md:hidden">
                         { user ? 
                         <button className='estudio-btn' onClick={()=>setVisible(!visible)}>
                             Opciones
@@ -39,20 +40,16 @@ const Estudio = ()=>{
                         <button className='estudio-btn' onClick={()=>setVisible(!visible)}>
                             Contactar
                         </button> }
-                    </div>
-                       
-                
+                </div>
+                <div className='hidden md:block md:w-60 md:z-20 col-start-2 '>
+                    <Contacto/>
+                </div>
+
+            
             </div>
 
           { visible && !user  ?  
-          <div className="absolute grid grid-cols-5 justify-items-center items-center rounded-md text-4xl right-10 left-10 z-10 text-gray-600 gap-4 contacto-link h-20  shadow-md">
-                            <a href=""><FaPinterestSquare></FaPinterestSquare></a>
-                            <a href=""><FaTwitterSquare></FaTwitterSquare></a>
-                            <a href=""><FaWhatsappSquare></FaWhatsappSquare></a>
-                            <a href=""><FaFacebookSquare></FaFacebookSquare></a>
-                            <a href=""><FaInstagramSquare></FaInstagramSquare></a>
-
-                        </div>   : null
+           <Contacto/> : null
 
           } 
 
