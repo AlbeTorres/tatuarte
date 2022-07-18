@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import EstudioCard from '../../components/estudio/EstudioCard';
 import Busqueda from '../../components/home/Busqueda/Busqueda';
 import DropMenu from '../../components/dropDownMenu/DropDownMenu';
-import {FaCaretDown,FaRegCompass,FaRegMap} from 'react-icons/fa';
+import {FaCaretDown,FaRegCompass,FaRegMap,FaGithub, FaTwitter} from 'react-icons/fa';
 import '../../index.css'
 
 const Home = ()=>{
@@ -106,14 +106,13 @@ const Home = ()=>{
 
         </section>
         
-        <footer className=' flex  flex-col lg:flex-row justify-center lg:items-center
-          bg-gray-600 text-gray-50 mx-auto h-18 mt-2'>
+        <footer className=' flex  flex-col lg:flex-row justify-center lg:items-center lg:justify-between lg:px-10
+          bg-gray-600 text-gray-50 mx-auto h-18 mt-2 p-2'>
             <p className='text-center'>Made by Albert with <span>Love </span></p>
-            <div className="social">
-                <a href="twitter" className="social-link twitter"></a>
-                <a href="inst"    className="social-link instagram"></a>
-                <a href=""        className="social-link facebook"></a>
-                <a href=""        className="social-link github"></a>
+            <div className="flex items-center justify-center mt-1   ">
+                <a href="https://twitter.com/albe_torres" className=" cursor-pointer mx-2" rel='noreferrer' target={'_blank'}>
+                    <FaTwitter className='text-2xl ' /></a>
+                <a href="https://github.com/albeTorres"   className=" cursor-pointer mx-2" rel='noreferrer' target={'_blank'}><FaGithub className='text-2xl '/></a>
             </div>
         </footer>
 
