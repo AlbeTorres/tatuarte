@@ -34,7 +34,7 @@ const UserOption = () => {
               className="hidden nav-input" />
 
             <ul 
-              className="nav-menu nav-transicion rounded-md   ">
+              className="nav-menu nav-transicion rounded-md shadow-md   ">
               <li 
                 className="py-3 block w-full text-center rounded-md hover:bg-gray-800 hover:text-gray-50
                 ">
