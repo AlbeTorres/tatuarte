@@ -59,7 +59,7 @@ const Estudioform = () => {
   return (
     <form
       onSubmit={onSubmit}
-      className="flex flex-col items-center justify-center  mt-4 md:w-1/2 md:mx-auto "
+      className="flex flex-col items-center justify-center  mt-4 md:w-1/2 md:mx-auto lg:w-1/3 "
     >
       <div className=" ">
         <label

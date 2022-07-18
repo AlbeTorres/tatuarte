@@ -5,6 +5,7 @@ import NuevaCuenta from './pages/auth/NuevaCuenta';
 import Home from './pages/home/Home';
 import Estudio from './pages/estudio/Estudio';
 import Estudioform from './pages/estudioForm/Estudioform';
+import Usuario from './pages/usuario/Usuario';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path='/home' element={<Home/>} />
           <Route exact path='/estudio' element={<Estudio/>} />
           <Route exact path='/estudioform' element={<Estudioform/>} />
+          <Route exact path='/usuario' element={<Usuario/>} />
         </Routes>
       </Router>
     
