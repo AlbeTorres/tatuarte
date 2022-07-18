@@ -6,6 +6,7 @@ import './estudio.css'
 import '../../index.css'
 import { Link } from 'react-router-dom';
 import Contacto from '../../components/estudio/Contacto';
+import Opciones from '../../components/estudio/Opciones';
 
 const Estudio = ()=>{
 
@@ -58,12 +59,7 @@ const Estudio = ()=>{
           } 
 
           { visible && user  ?  
-          <div className="absolute grid grid-rows-2 justify-items-center items-center rounded-md text-4xl right-10 left-10 z-10 text-gray-600 contacto-link h-28 shadow-md">
-                            
-                            <Link to={'/home'} className='estudio-btn text-center'>Añadir</Link>
-                            <Link to={'/home'} className='estudio-btn text-center'>Editar</Link>
-
-                        </div>   : null
+         <Opciones/> : null
           } 
 
 
