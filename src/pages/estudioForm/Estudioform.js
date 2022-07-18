@@ -88,7 +88,7 @@ const Estudioform = () => {
     </div>
 
     <div className="border-2 border-gray-600 w-4/5 flex items-center justify-center flex-col my-2 rounded-md shadow-lg">
-        <h1 className='text-2xl text-gray-600 text-center '>Contácto</h1>
+        <h1 className='text-2xl text-gray-600 text-center '>Contacto</h1>
         <div className=' input-estudioForm_div'>
             <FaPinterestSquare className='input-icon'></FaPinterestSquare>
             <input className='input-estudioForm' type={'url'} placeholder={'Pinteres'}/>
