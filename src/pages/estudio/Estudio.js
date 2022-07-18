@@ -42,24 +42,28 @@ const Estudio = ()=>{
                             Contactar
                         </button> }
                 </div>
+ 
+                <div className='hidden md:block md:w-60 md:z-20 col-start-2 mb-4  '>
+                  
+                { !user  ?  <Contacto/>:<Opciones/>}   
+                </div>
 
-                { !user  ? 
-                <div className='hidden md:block md:w-60 md:z-20 col-start-2 '>
-                    <Contacto/>
-                </div>: null
-
-                }   
+                
 
             
             </div>
 
-          { visible && !user  ?  
-           <Contacto/> : null
+          { visible && !user  ? 
+            <div className='md:hidden'>
+                <Contacto/> 
+            </div> : null
 
           } 
 
           { visible && user  ?  
-         <Opciones/> : null
+          <div className='md:hidden'>
+         <Opciones/>
+         </div> : null
           } 
 
 
