@@ -11,7 +11,7 @@ const Estudio = ()=>{
 
     const [visible, setVisible]=useState(false);
 
-    const user= false;
+    const user= true;
 
     return (
         <Fragment>
@@ -41,9 +41,13 @@ const Estudio = ()=>{
                             Contactar
                         </button> }
                 </div>
+
+                { !user  ? 
                 <div className='hidden md:block md:w-60 md:z-20 col-start-2 '>
                     <Contacto/>
-                </div>
+                </div>: null
+
+                }   
 
             
             </div>
