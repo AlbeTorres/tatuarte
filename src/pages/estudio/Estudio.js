@@ -7,14 +7,24 @@ import '../../index.css'
 import { Link } from 'react-router-dom';
 import Contacto from '../../components/estudio/Contacto';
 import Opciones from '../../components/estudio/Opciones';
+import TrabajoForm from '../../components/trabajo/TrabajoForm';
+import usePreventScroll from '../../hooks/usePreventScroll';
 
 const Estudio = ()=>{
 
     const [visible, setVisible]=useState(false);
     const [visibleAddForm, setVisibleAddForm]=useState(false);
+    const {lockScroll, unlockScroll}= usePreventScroll();
 
     const abrirAdd=()=>{
+        lockScroll();
         setVisibleAddForm(!visibleAddForm);
+    }
+
+    const cerrarAdd=()=>{
+        unlockScroll();
+        setVisibleAddForm(!visibleAddForm);
+
     }
 
     const user= true;
@@ -71,8 +81,19 @@ const Estudio = ()=>{
          </div> : null
           } 
 
-          { visibleAddForm && <div className='absolute w-screen h-screen bg-black z-50 '></div> }
+          { visibleAddForm && 
+          <div>
+                <div className='absolute top-0 w-screen h-screen z-20   '>
+                    <div className='relative w-full h-full add-bg'>
 
+
+                    </div>
+                    <TrabajoForm onClick={cerrarAdd} />
+                </div>
+            </div> 
+            }
+                
+              
 
 
 
