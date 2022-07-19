@@ -11,6 +11,11 @@ import Opciones from '../../components/estudio/Opciones';
 const Estudio = ()=>{
 
     const [visible, setVisible]=useState(false);
+    const [visibleAddForm, setVisibleAddForm]=useState(false);
+
+    const abrirAdd=()=>{
+        setVisibleAddForm(!visibleAddForm);
+    }
 
     const user= true;
 
@@ -45,7 +50,7 @@ const Estudio = ()=>{
  
                 <div className='hidden md:block md:w-60 md:z-20 col-start-2 mb-4  '>
                   
-                { !user  ?  <Contacto/>:<Opciones/>}   
+                { !user  ?  <Contacto/>:<Opciones onClick={abrirAdd} />}   
                 </div>
 
                 
@@ -62,10 +67,11 @@ const Estudio = ()=>{
 
           { visible && user  ?  
           <div className='md:hidden'>
-         <Opciones/>
+         <Opciones onClick={abrirAdd}/>
          </div> : null
           } 
 
+          { visibleAddForm && <div className='absolute w-screen h-screen bg-black z-50 '></div> }
 
 
 
