@@ -20,11 +20,9 @@ const Estudio = ()=>{
         {id:4,img:'img/test.jpg',precio:'2000'},
     ]
 
-    const sourceImageUrls= trabajos.map(trabajo=>trabajo.img)
-    console.log(sourceImageUrls)
-
     const [visible, setVisible]=useState(false);
     const [visibleAddForm, setVisibleAddForm]=useState(false);
+    const [visibleImgView, setVisibleImgView]=useState(false);
     const {lockScroll, unlockScroll}= usePreventScroll();
 
     const abrirAdd=()=>{
@@ -36,6 +34,11 @@ const Estudio = ()=>{
         unlockScroll();
         setVisibleAddForm(!visibleAddForm);
 
+    }
+
+    const showImg=()=>{
+        lockScroll();
+        setVisibleImgView(!visibleImgView);
     }
 
     const user= true;
@@ -103,7 +106,16 @@ const Estudio = ()=>{
                 </div>
             </div> 
             }
-                
+
+    { visibleImgView && 
+            <div className='absolute top-0 w-screen add-heigth z-20   '>
+            <div className='relative w-full h-full add-bg'>
+
+
+            </div>
+            </div>
+        }
+                            
               
 
 
@@ -113,8 +125,10 @@ const Estudio = ()=>{
 
                 <div className='grid gap-4 items-center  auto-rows-min md:grid-cols-2 lg:grid-cols-3 md:gap-4  sectionHeigth  overflow-y-scroll p-1  w-11/12  md:w-4/5 mx-auto mb-2'>
                     
-                    {trabajos.map((trabajo)=><Trabajo key={trabajo.id} img={trabajo.img} precio={trabajo.precio}/>) }
+                    {trabajos.map((trabajo)=><Trabajo key={trabajo.id} img={trabajo.img} precio={trabajo.precio} showImg={showImg}/>) }
                 </div>
+
+                
           
 
         </Fragment>

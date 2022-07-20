@@ -3,17 +3,19 @@ import './trabajo.css'
 import{FaDollarSign, FaHeart} from 'react-icons/fa';
 import {RViewer, RViewerTrigger } from 'react-viewerjs';
 
-const Trabajo = ({index, img,precio}) => {
+const Trabajo = ({showImg, img,precio}) => {
+
+
+      const showImgT=(image)=>{
+        showImg(image);
+      }
   return (
     <Fragment>
-      <RViewer imageUrls={img} >
-        
-     
         <div className='relative rounded-md h-44 m-auto estudio-card w-full'>
-          <RViewerTrigger index={index}>
+         
              <img src={img} alt='' className='rounded-md w-full h-44 object-cover'/> 
-          </RViewerTrigger>
-             <div className='absolute bg-trabajo_card h-full top-0 w-full rounded-md flex items-end'>
+          
+             <div className='absolute bg-trabajo_card h-full top-0 w-full rounded-md flex items-end' onClick={()=>showImgT(img)}>
               <div className="flex justify-between w-full items-center  mb-2 mx-4 text-xl">
 
                 <div className='flex items-center'>
@@ -23,11 +25,8 @@ const Trabajo = ({index, img,precio}) => {
                 <FaHeart className='text-white'></FaHeart>
 
               </div>
-
-
              </div>
         </div>
-        </RViewer>
     </Fragment>
   )
 }
