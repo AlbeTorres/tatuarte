@@ -6,8 +6,9 @@ import {RViewer, RViewerTrigger } from 'react-viewerjs';
 const Trabajo = ({showImg, img,precio}) => {
 
 
-      const showImgT=(image)=>{
-        showImg(image);
+      const showImgT=(index)=>{
+        showImg(index);
+        console.log(index)
       }
   return (
     <Fragment>
@@ -15,7 +16,7 @@ const Trabajo = ({showImg, img,precio}) => {
          
              <img src={img} alt='' className='rounded-md w-full h-44 object-cover'/> 
           
-             <div className='absolute bg-trabajo_card h-full top-0 w-full rounded-md flex items-end' onClick={()=>showImgT(img)}>
+             <div className='absolute bg-trabajo_card h-full top-0 w-full rounded-md flex items-end' onClick={()=>showImgT(1)}>
               <div className="flex justify-between w-full items-center  mb-2 mx-4 text-xl">
 
                 <div className='flex items-center'>

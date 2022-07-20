@@ -11,3 +11,11 @@
     text-white inline-block w-4/5  hover:text-white hover:bg-gray-800 focus:outline-none
     focus:ring focus:ring-offset-2 focus:ring-gray-800 focus:ring-opacity-50 active:bg-gray-900
 }
+
+.imagen-view{
+    height: 27rem;
+    width: 21rem;
+    top: 10rem;
+    left: 1.5rem;
+    background: transparent;
+}

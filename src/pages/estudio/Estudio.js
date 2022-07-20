@@ -9,16 +9,21 @@ import Contacto from '../../components/estudio/Contacto';
 import Opciones from '../../components/estudio/Opciones';
 import TrabajoForm from '../../components/trabajo/TrabajoForm';
 import usePreventScroll from '../../hooks/usePreventScroll';
+import ImagenView from '../../components/estudio/ImagenView';
 
 
 const Estudio = ()=>{
 
     const trabajos= [
         {id:1,img:'img/test.jpg',precio:'2000'},
-        {id:2,img:'img/test.jpg',precio:'2000'},
+        {id:2,img:'img/1.jpg',precio:'2000'},
         {id:3,img:'img/test.jpg',precio:'2000'},
         {id:4,img:'img/test.jpg',precio:'2000'},
     ]
+
+    const urlSource= trabajos.map(trabajo=>trabajo.img);
+    let indext= 1;
+    console.log(urlSource)
 
     const [visible, setVisible]=useState(false);
     const [visibleAddForm, setVisibleAddForm]=useState(false);
@@ -36,8 +41,14 @@ const Estudio = ()=>{
 
     }
 
-    const showImg=()=>{
+    const showImg=(index)=>{
         lockScroll();
+        setVisibleImgView(!visibleImgView);
+        indext=index
+        console.log(indext)
+    }
+    const closeShowImg=()=>{
+        unlockScroll();
         setVisibleImgView(!visibleImgView);
     }
 
@@ -109,10 +120,17 @@ const Estudio = ()=>{
 
     { visibleImgView && 
             <div className='absolute top-0 w-screen add-heigth z-20   '>
+                <div className="absolute z-30 top-32  right-10 bg-red-700 shadow-lg rounded-full cursor-pointer " onClick={closeShowImg}>
+                <FaRegCompass className='text-gray-100 text-4xl '></FaRegCompass>
+                </div>
+                
             <div className='relative w-full h-full add-bg'>
 
 
+
+
             </div>
+                <ImagenView urlSource={urlSource} index={indext}/>
             </div>
         }
                             
