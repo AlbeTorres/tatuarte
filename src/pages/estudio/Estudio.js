@@ -83,7 +83,7 @@ const Estudio = ()=>{
 
           { visibleAddForm && 
           <div>
-                <div className='absolute top-0 w-screen h-screen z-20   '>
+                <div className='absolute top-0 w-screen add-heigth z-20   '>
                     <div className='relative w-full h-full add-bg'>
 
 
