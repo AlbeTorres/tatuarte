@@ -1,0 +1,2 @@
+//Trabajos
+export const OBTENER_TRABAJOS='OBTENER_TRABAJOS';

@@ -10,7 +10,18 @@ import Opciones from '../../components/estudio/Opciones';
 import TrabajoForm from '../../components/trabajo/TrabajoForm';
 import usePreventScroll from '../../hooks/usePreventScroll';
 
+
 const Estudio = ()=>{
+
+    const trabajos= [
+        {id:1,img:'img/test.jpg',precio:'2000'},
+        {id:2,img:'img/test.jpg',precio:'2000'},
+        {id:3,img:'img/test.jpg',precio:'2000'},
+        {id:4,img:'img/test.jpg',precio:'2000'},
+    ]
+
+    const sourceImageUrls= trabajos.map(trabajo=>trabajo.img)
+    console.log(sourceImageUrls)
 
     const [visible, setVisible]=useState(false);
     const [visibleAddForm, setVisibleAddForm]=useState(false);
@@ -98,18 +109,13 @@ const Estudio = ()=>{
 
 
         
+          
 
-            <div className='grid gap-4 items-center  auto-rows-min md:grid-cols-2 lg:grid-cols-3 md:gap-4  sectionHeigth  overflow-y-scroll p-1  w-11/12  md:w-4/5 mx-auto mb-2'>
-                <Trabajo/>
-                <Trabajo/>
-                <Trabajo/>
-                <Trabajo/>
-                <Trabajo/>
-                <Trabajo/>
-                <Trabajo/>
-                <Trabajo/>
-                <Trabajo/>
-            </div>
+                <div className='grid gap-4 items-center  auto-rows-min md:grid-cols-2 lg:grid-cols-3 md:gap-4  sectionHeigth  overflow-y-scroll p-1  w-11/12  md:w-4/5 mx-auto mb-2'>
+                    
+                    {trabajos.map((trabajo)=><Trabajo key={trabajo.id} img={trabajo.img} precio={trabajo.precio}/>) }
+                </div>
+          
 
         </Fragment>
 
