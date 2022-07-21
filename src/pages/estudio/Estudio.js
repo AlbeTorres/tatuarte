@@ -3,11 +3,6 @@ import Trabajo from "../../components/trabajo/Trabajo";
 import {
   FaRegCompass,
   FaRegMap,
-  FaPinterestSquare,
-  FaTwitterSquare,
-  FaWhatsappSquare,
-  FaFacebookSquare,
-  FaInstagramSquare,
 } from "react-icons/fa";
 import "./estudio.css";
 import "../../index.css";
