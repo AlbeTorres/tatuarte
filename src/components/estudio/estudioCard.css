@@ -12,10 +12,23 @@
     focus:ring focus:ring-offset-2 focus:ring-gray-800 focus:ring-opacity-50 active:bg-gray-900
 }
 
-.imagen-view{
-    height: 27rem;
-    width: 21rem;
-    top: 10rem;
-    left: 1.5rem;
-    background: transparent;
+
+
+@media (min-width:768px) {
+
+    .imagen-view{
+        width: 40rem;
+        margin: -28rem 0 0 -20rem;
+        height: max-content;
+        
 }
+}
+@media (min-width:1024px) {
+
+    .imagen-view{
+        width: 30rem;
+        margin: -20rem 0 0 -15rem;
+        height: max-content;
+        
+}}
+    
