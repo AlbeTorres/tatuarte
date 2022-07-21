@@ -26,8 +26,8 @@
 @media (min-width:1024px) {
 
     .imagen-view{
-        width: 30rem;
-        margin: -20rem 0 0 -15rem;
+        width: 20rem;
+        margin: -15rem 0 0 -10rem;
         height: max-content;
         
 }}

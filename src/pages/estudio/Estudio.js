@@ -20,10 +20,20 @@ import ImagenView from "../../components/estudio/ImagenView";
 
 const Estudio = () => {
   const trabajos = [
-    { id: 1, img: "img/test.jpg", precio: "2000" },
-    { id: 2, img: "img/1.jpg", precio: "2000" },
-    { id: 3, img: "img/test.jpg", precio: "2000" },
-    { id: 4, img: "img/test.jpg", precio: "2000" },
+    { id: 1, img: "img/2.jpg", precio: "2000" },
+    { id: 2, img: "img/3.jpg", precio: "2000" },
+    { id: 3, img: "img/4.jpg", precio: "2000" },
+    { id: 4, img: "img/5.jpg", precio: "2000" },
+    { id: 5, img: "img/6.jpg", precio: "2000" },
+    { id: 6, img: "img/7.jpg", precio: "2000" },
+    { id: 7, img: "img/8.jpg", precio: "2000" },
+    { id: 8, img: "img/9.jpg", precio: "2000" },
+    { id: 9, img: "img/10.jpg", precio: "2000" },
+    { id: 10, img: "img/11.jpg", precio: "2000" },
+    { id: 11, img: "img/12.jpg", precio: "2000" },
+    { id: 12, img: "img/13.jpg", precio: "2000" },
+    { id: 13, img: "img/14.jpg", precio: "2000" },
+    { id: 14, img: "img/15.jpg", precio: "2000" },
   ];
 
 
