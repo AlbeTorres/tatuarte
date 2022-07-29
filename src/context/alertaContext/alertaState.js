@@ -8,7 +8,7 @@ const AlertaState=props=>{
        alerta:null
     }
 
-    const [state, dispatch]= useReducer(initialState, alertaReducer);
+    const [state, dispatch]= useReducer( alertaReducer,initialState);
 
     const mostrarAlerta = (msg, categoria)=>{
         dispatch({

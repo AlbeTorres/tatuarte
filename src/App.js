@@ -6,12 +6,13 @@ import Home from './pages/home/Home';
 import Estudio from './pages/estudio/Estudio';
 import Estudioform from './pages/estudioForm/Estudioform';
 import Usuario from './pages/usuario/Usuario';
+import AlertaState from './context/alertaContext/alertaState'
 
 
 function App() {
   return ( 
     
-    
+    <AlertaState>
       <Router>
         <Routes>
           <Route exact path='/' element={<Login/>} />
@@ -22,6 +23,8 @@ function App() {
           <Route exact path='/usuario' element={<Usuario/>} />
         </Routes>
       </Router>
+
+    </AlertaState>
     
 
     
