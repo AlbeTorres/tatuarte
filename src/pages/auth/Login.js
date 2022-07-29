@@ -2,7 +2,7 @@ import React,{useState, useContext} from 'react'
 import {Link} from 'react-router-dom';
 import Footer from '../../components/auth/Footer'
 import '../../index.css';
-import { FaPaintBrush } from 'react-icons/fa';
+import { FaLock, FaEnvelope } from 'react-icons/fa';
 import alertaContext from '../../context/alertaContext/alertaContext';
 
 const Login = () => { 
@@ -53,7 +53,7 @@ const Login = () => {
                 
                     
             <div className=" input-estudioForm_div--nc ">
-                    <FaPaintBrush className="input-icon"></FaPaintBrush>
+                    <FaEnvelope className="input-icon"></FaEnvelope>
                     <input className="input-estudioForm" 
                         type="email"
                         id="email"
@@ -64,7 +64,7 @@ const Login = () => {
                     
                 </div>
                 <div className=" input-estudioForm_div--nc ">
-                    <FaPaintBrush className="input-icon"></FaPaintBrush>
+                    <FaLock className="input-icon"></FaLock>
                     <input className="input-estudioForm" 
                         type="password"
                         id="password"
