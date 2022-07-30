@@ -1,5 +1,5 @@
 import {createContext} from "react";
 
-const trabajoContext = createContext();
+const TrabajoContext = createContext();
 
-export default trabajoContext;
+export default TrabajoContext;

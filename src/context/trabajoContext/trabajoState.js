@@ -1,5 +1,5 @@
 import React,{useReducer} from "react";
-import trabajoContext from "./trabajoContext";
+import TrabajoContext from "./trabajoContext";
 import trabajoReducer from "./trabajoReducer";
 import { OBTENER_TRABAJOS } from "../../types";
 
@@ -16,7 +16,7 @@ const TrabajoState=props=>{
 
     return(
 
-       <trabajoContext.Provider
+       <TrabajoContext.Provider
         value={{
             nombre:state.nombre,
             img:state.img
@@ -26,10 +26,12 @@ const TrabajoState=props=>{
        >
        {props.children}
        
-       </trabajoContext.Provider>
+       </TrabajoContext.Provider>
     )
 
     
 
 
 }
+
+export default TrabajoState;

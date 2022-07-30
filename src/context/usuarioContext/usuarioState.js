@@ -1,6 +1,6 @@
 import React,{useReducer} from "react";
 import usuarioReducer from './usuarioReducer';
-import usuarioContext from './usuarioContext';
+import UsuarioContext from './usuarioContext';
 import { REGISTRO_EXITOSO,
      REGISTRO_ERROR,
      OBTENER_USUARIO, 
@@ -131,7 +131,7 @@ const UsuarioState=props=>{
 
 
     return(
-        <usuarioContext.Provider
+        <UsuarioContext.Provider
         value={
             {
                 autenticado:state.autenticado,
@@ -142,6 +142,6 @@ const UsuarioState=props=>{
             }
         }>
             {props.children}
-        </usuarioContext.Provider>
+        </UsuarioContext.Provider>
     )
 }
