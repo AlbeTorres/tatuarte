@@ -67,6 +67,11 @@ const NuevaCuenta = ()=>{
 
         }
 
+        if(password.length<8){
+            mostrarAlerta('La contraseña debe contener más 8 caracteres', 'error')
+            return;
+        }
+
         registrarUsuario({nombre,email,password})
     }
 
