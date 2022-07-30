@@ -38,6 +38,16 @@ const Usuario = () => {
           });
         }
       };
+
+      const [img,setImg]=useState("img/test.jpg");
+
+      const onImgSelect=e=>{
+        let imgArray= e.target.files;
+        let objectUrl = URL.createObjectURL(imgArray[0])
+        setImg(objectUrl);
+      
+
+      }
     
       const onSubmit = (e) => {
         e.preventDefault();
@@ -59,7 +69,7 @@ const Usuario = () => {
             className="rounded-full w-20 h-20 relative block cursor-pointer"
             >
             <img
-                src="img/test.jpg"
+                src={img}
                 alt={""}
                 className=" rounded-full w-full h-full object-cover"
             />
@@ -69,8 +79,9 @@ const Usuario = () => {
             id="formImg"
             type={"file"}
             alt={""}
+            onChange= {onImgSelect}
             className="hidden h-full w-full"
-            accept="image/png, image/jpg "
+            accept="image/* "
             />
         </div>
 
