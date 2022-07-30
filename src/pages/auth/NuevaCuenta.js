@@ -1,14 +1,36 @@
-import React,{useState, useContext} from 'react'
-import {Link} from 'react-router-dom';
+import React,{useState, useContext, useEffect} from 'react'
+import {Link, useNavigate} from 'react-router-dom';
 import Footer from '../../components/auth/Footer'
 import { FaRegUser,FaLock, FaEnvelope } from 'react-icons/fa';
 import alertaContext from '../../context/alertaContext/alertaContext';
+import authContext from '../../context/authContext/authContext';
 import '../../index.css';
 
 const NuevaCuenta = ()=>{
 
+    const history = useNavigate();
+
     const auxAlertaContext = useContext(alertaContext);
     const {alerta,mostrarAlerta}= auxAlertaContext;
+  
+    const AuthContext = useContext(authContext);
+    const {autenticado,mensaje,registrarUsuario} = AuthContext;
+  
+  
+  
+    useEffect(()=>{
+  
+      if (autenticado){
+        history('/home');
+       }
+  
+      if(mensaje){
+        mostrarAlerta(mensaje.msg, mensaje.categoria);
+      }
+      
+    },[mensaje, autenticado]);
+
+    
 
     const [newUser, setNewuser]= useState({
         nombre:"",
@@ -41,8 +63,11 @@ const NuevaCuenta = ()=>{
         //validar contraseñas iguales
         if(password!==passwordTes){
             mostrarAlerta('La contraseñas no coinciden', 'error')
+            return;
 
         }
+
+        registrarUsuario({nombre,email,password})
     }
 
     return (

@@ -17,16 +17,6 @@
     @apply py-1 px-3 border-2 border-gray-500 rounded-md shadow-sm 
 }
 
-.sectionHeigth{
-    height: 76vh;
-}
-@media (min-width:768px) {
-    .mecagoentumadre{
-        padding: 2.5rem;
-    }
-    
-    
-}
 
 .alerta{
     @apply text-xl  text-white rounded-md absolute right-4 text-center p-2 top-2 shadow-md
@@ -53,6 +43,9 @@
 }
 
 
+.sectionHeigth{
+    height: 76vh;
+}
 
 .contenedor{
     margin: 0 auto;
@@ -79,23 +72,12 @@
     border-radius: 5px;
 }
 
-.social-link.twitter{
-    background-image: url('../src/assets/twitter.svg');
+
+
+@media (min-width:768px) {
+    .mecagoentumadre{
+        padding: 2.5rem;
+    }
+    
     
 }
-
-.social-link.facebook{
-    background-image: url('../src/assets/facebook.svg');
-
-}
-
-.social-link.instagram{
-    background-image: url('../src/assets/instagram.svg');
-    
-}
-
-.social-link.github{
-    background-image: url('../src/assets/github.svg');
-    
-}
-
