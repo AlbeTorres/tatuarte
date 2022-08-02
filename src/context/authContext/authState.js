@@ -34,16 +34,16 @@ const AuthState = (props) => {
     }
 
     try {
-
+      if (token) {
       const respuesta = await clienteAxios.get("api/auth");
-
+     
       dispatch({
         type: OBTENER_USUARIO,
         payload: respuesta.data.usuario,
       });
-
+    }
     } catch (error) {
-      console.log(error);
+      
       dispatch({
         type: LOGIN_ERROR,
       });
@@ -123,6 +123,7 @@ const AuthState = (props) => {
         autenticado: state.autenticado,
         cargando:state.cargando,
         registrarUsuario,
+        usuarioAutenticado,
         iniciarSesion,
         cerrarSesion,
       }}

@@ -19,7 +19,7 @@ const Login = () => {
   useEffect(()=>{
 
     if (autenticado){
-      history('/home');
+      history('/');
     }
 
     if(mensaje){

@@ -9,7 +9,6 @@ import '../../index.css'
 
 const Home = ()=>{
 
-    const[logeado, setLogeado]=useState(true);
     const[visible, setVisible]=useState(false);
 
     const provinciaArray= [

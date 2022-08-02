@@ -8,7 +8,12 @@ import Estudioform from './pages/estudioForm/Estudioform';
 import Usuario from './pages/usuario/Usuario';
 import AlertaState from './context/alertaContext/alertaState'
 import AuthState from './context/authContext/authState';
+import tokenAuth from './config/tokenAuth';
 
+// const token = localStorage.getItem('token');
+// if(token){
+//   tokenAuth(token);
+// }
 
 function App() {
   return ( 
@@ -16,9 +21,9 @@ function App() {
         <AlertaState>
           <Router>
             <Routes>
-              <Route exact path='/' element={<Login/>} />
+              <Route exact path='/login' element={<Login/>} />
               <Route exact path='/nueva-cuenta' element={<NuevaCuenta/>} />
-              <Route exact path='/home' element={<Home/>} />
+              <Route exact path='/' element={<Home/>} />
               <Route exact path='/estudio' element={<Estudio/>} />
               <Route exact path='/estudioform' element={<Estudioform/>} />
               <Route exact path='/usuario' element={<Usuario/>} />
