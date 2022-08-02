@@ -1,21 +1,36 @@
-import React, { Fragment, useState, useContext, useEffect } from "react";
+import React, { Fragment, useState, useContext, useEffect,useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./userOption.css";
 import { FaCaretDown } from "react-icons/fa";
 import authContext from "../../../context/authContext/authContext";
+import estudioContext from "../../../context/estudioContext/estudioContext";
 
 const UserOption = () => {
   const AuxAuthContext = useContext(authContext);
   const { usuario, autenticado, cerrarSesion, usuarioAutenticado, cargando } =
     AuxAuthContext;
 
-  useEffect(() => {
-    usuarioAutenticado();
-  }, []);
+    const AuxEstudioContext= useContext(estudioContext);
+    const {estudio, obtenerEstudioByCreatorID}=AuxEstudioContext;
 
+    const obtenerAutenticado=useCallback(()=>{
+      usuarioAutenticado()
+    },[]);
+
+  useEffect(() => {
+
+    obtenerAutenticado();
+    
+    if(usuario!=null){
+      obtenerEstudioByCreatorID(usuario._id);
+    }
+  }, [obtenerAutenticado]);
+
+
+  
   return (
     <Fragment>
-      { ( !autenticado && cargando) ? (
+      {  !autenticado ? (
         <nav>
           <label htmlFor="menu" className="cursor-pointer show ">
             <img
@@ -69,6 +84,17 @@ const UserOption = () => {
               <Link to={"/usuario"} className="block w-full">
                 Perfil
               </Link>
+            </li>
+            <div className="h-px w-11/12 bg-gray-50"></div>
+            <li
+              className="py-3 block w-full text-center rounded-md hover:bg-gray-800 hover:text-gray-50
+                "
+            >
+            {estudio ?  <Link to={"/estudio"} className="block w-full">
+                Estudio
+              </Link>:  <Link to={"/estudioform"} className="block w-full">
+                Crear estudio
+              </Link>}
             </li>
             <div className="h-px w-11/12 bg-gray-50"></div>
             <li className="py-3 block w-full text-center rounded-md hover:bg-gray-800 hover:text-gray-50">
