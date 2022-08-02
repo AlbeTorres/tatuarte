@@ -13,18 +13,29 @@ const UserOption = () => {
     const AuxEstudioContext= useContext(estudioContext);
     const {estudio, obtenerEstudioByCreatorID}=AuxEstudioContext;
 
-    const obtenerAutenticado=useCallback(()=>{
-      usuarioAutenticado()
-    },[]);
 
-  useEffect(() => {
+    function obtenerUsuarioAuth(id){
+      if(id==0){console.log('0')}
+      if(id!=0){
+        obtenerEstudioByCreatorID(id);
+      }
+      }
 
-    obtenerAutenticado();
-    
+    let aux=0
+
     if(usuario!=null){
-      obtenerEstudioByCreatorID(usuario._id);
+      aux=usuario._id
+      
     }
-  }, [obtenerAutenticado]);
+    
+    const eso= useCallback(()=>obtenerUsuarioAuth(aux),[aux])
+    
+    useEffect(() => {
+      eso();
+      usuarioAutenticado()
+    
+    
+      }, [eso]);
 
 
   
