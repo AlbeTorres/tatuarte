@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import DropItem from './DropDownItem';
 
-const DropMenu = ({name, icon,arreglo, funcion}) => {
+const DropMenu = ({name, icon,arreglo, funcion , iconItem}) => {
 
 
     const [open,setOpen]= useState(false);
@@ -25,8 +25,8 @@ const DropMenu = ({name, icon,arreglo, funcion}) => {
         </div>
         
             { open && 
-                <div className='absolute rounded-md bg-gray-600 flex items-center flex-col w-2/4  '>
-                {arreglo.map(item=><DropItem icon={item.icon} itemSelect={item.text} funcion={onSelected} />) }
+                <div className='absolute rounded-md bg-gray-600 flex items-center flex-col w-2/4 overflow-y-scroll   h-48   '>
+                {arreglo.map(item=><DropItem icon={iconItem} itemSelect={item.nombre ? item.nombre: item} funcion={onSelected} />) }
                 </div>
             }
 
