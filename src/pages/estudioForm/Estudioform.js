@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./estudioForm.css";
 import '../../index.css'
 import {
@@ -17,24 +17,28 @@ import { Link } from "react-router-dom";
 import DropMenu from "../../components/dropDownMenu/DropDownMenu";
 import provinciaArray from "../../utils/provinciasCuba";
 import { fileUpload } from "../../utils/subirImg";
+import estudioContext from "../../context/estudioContext/estudioContext";
 
 const Estudioform = () => {
   
-  
-  const [estudioF, setEstudioF] = useState({
-    nombre:'',
-    img:'img/test.jpg',
-    provincia: "provincia",
-    municipio: "municipio",
-    pinteres:'',
-    twitter:'',
-    instagram:'',
-    facebook:'',
-    whatsapp:'',
-    load:false,
+  const AuxEstudioContext= useContext(estudioContext);
+  const {registrarEstudio}= AuxEstudioContext;
+  const [estudioF, setEstudioF] = useState(
+    {
+      nombre:'',
+      img:'img/test.jpg',
+      provincia: "provincia",
+      municipio: "municipio",
+      pinteres:'',
+      twitter:'',
+      instagram:'',
+      facebook:'',
+      movil:'',
+      load:false,
+
   });
   
-  const [img,setImg]=useState("img/test.jpg");
+  
 
    //obtener los municipios por provoncias-----------------------------------
    const axuArray= provinciaArray.filter(provincia=>provincia.nombre==estudioF.provincia);
@@ -90,11 +94,24 @@ const Estudioform = () => {
       })
   }
 
+  const {nombre, img, provincia, municipio, pinteres,twitter, facebook, instagram, movil}= estudioF;
+
   const onSubmit = (e) => {
     e.preventDefault();
     
+    if(nombre =='' || provincia=='provincia' || municipio=='municipio'){
 
-    console.log("onsubmit");
+    }
+
+    if( movil==''){
+
+    }
+
+    // if(pinteres==''|| twitter=='' || facebook=='' || instagram ==''){
+
+    //  }
+
+    registrarEstudio({nombre, img, provincia, municipio, pinteres,twitter, facebook, instagram, movil})
   };
 
   return (
@@ -171,7 +188,7 @@ const Estudioform = () => {
           <FaPinterestSquare className="input-icon"></FaPinterestSquare>
           <input
             className="input-estudioForm"
-            type={"url"}
+            type={"text"}
             placeholder={"Pinteres"}
             name={'pinteres'}
             value={estudioF.pinteres}
@@ -183,7 +200,7 @@ const Estudioform = () => {
           <FaTwitterSquare className="input-icon"></FaTwitterSquare>
           <input
             className="input-estudioForm"
-            type={"url"}
+            type={"text"}
             placeholder={"Twitter"}
             name={'twitter'}
             value={estudioF.twitter}
@@ -194,7 +211,7 @@ const Estudioform = () => {
           <FaInstagramSquare className="input-icon"></FaInstagramSquare>
           <input
             className="input-estudioForm"
-            type={"url"}
+            type={"text"}
             placeholder={"Instagram"}
             name={'instagram'}
             value={estudioF.instagram}
@@ -205,7 +222,7 @@ const Estudioform = () => {
           <FaFacebookSquare className="input-icon"></FaFacebookSquare>
           <input
             className="input-estudioForm"
-            type={"url"}
+            type={"text"}
             placeholder={"Facebook"}
             name={'facebook'}
             value={estudioF.facebook}
@@ -216,10 +233,10 @@ const Estudioform = () => {
           <FaWhatsappSquare className="input-icon"></FaWhatsappSquare>
           <input
             className="input-estudioForm"
-            type={"url"}
+            type={'tel'}
             placeholder={"Whatsapp"}
-            name={'whatsapp'}
-            value={estudioF.whatsapp}
+            name={'movil'}
+            value={estudioF.movil}
             onChange={onChangeF}
           />
         </div>

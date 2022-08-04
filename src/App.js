@@ -11,10 +11,10 @@ import AuthState from './context/authContext/authState';
 import EstudioState from './context/estudioContext/estudioState';
 import tokenAuth from './config/tokenAuth';
 
-// const token = localStorage.getItem('token');
-// if(token){
-//   tokenAuth(token);
-// }
+ const token = localStorage.getItem('token');
+ if(token){
+  tokenAuth(token);
+ }
 
 function App() {
   return ( 

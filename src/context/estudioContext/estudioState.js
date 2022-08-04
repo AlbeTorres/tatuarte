@@ -19,10 +19,19 @@ const EstudioState=props=>{
     const[state, dispatch]= useReducer(estudioReducer,initialState);
 
     //Registrar estudio
-    const registrarEstudio=(datos)=>{
+    const registrarEstudio=async(datos)=>{
         try {
+
+            const resolve= await clienteAxios.post('/api/estudios', datos);
+            console.log(resolve.data)
+
+            // dispatch({
+            //     type:REGISTRAR_ESTUDIO,
+            //     payload:resolve.data
+            // })
             
         } catch (error) {
+            console.log(error)
             
         }
     }
@@ -67,6 +76,7 @@ const EstudioState=props=>{
             busqueda:state.busqueda,
             obtenerEstudioByCreatorID,
             insertarTermBusqueda,
+            registrarEstudio,
 
         }}>
             {props.children}
