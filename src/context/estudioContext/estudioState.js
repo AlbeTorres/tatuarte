@@ -7,7 +7,7 @@ import clienteAxios from "../../config/axios";
 
 const EstudioState=props=>{
    const initialState={
-        estudios:[],
+        estudios:[''],
         estudio:null,
         busqueda:'',
 
@@ -51,6 +51,7 @@ const EstudioState=props=>{
     return(
         <estudioContext.Provider
         value={{
+            estudios:state.estudios,
             estudio:state.estudio,
             busqueda:state.busqueda,
             obtenerEstudioByCreatorID,

@@ -1,16 +1,18 @@
-import React,{Fragment,useState} from 'react'
+import React,{Fragment,useState, useContext} from 'react'
 import UserOption from '../../components/home/UserOption/UserOption'
 import {Link} from 'react-router-dom';
 import EstudioCard from '../../components/estudio/EstudioCard';
 import Busqueda from '../../components/home/Busqueda/Busqueda';
 import DropMenu from '../../components/dropDownMenu/DropDownMenu';
 import {FaCaretDown,FaRegCompass,FaRegMap,FaGithub, FaTwitter} from 'react-icons/fa';
+import estudioContext from '../../context/estudioContext/estudioContext';
 import '../../index.css'
 
 const Home = ()=>{
+    
+    let estudioFilter=[];
 
-    const[visible, setVisible]=useState(false);
-
+    //arreglo de provincias de Cuba
     const provinciaArray= [{
         id: 1,
         nombre: 'Pinar del Río',
@@ -89,20 +91,26 @@ const Home = ()=>{
                 "Bartolomé Masó", "Bayamo", "Buey Arriba", "Campechuela", "Cauto Cristo", "Guisa", "Jiguaní", "Manzanillo", "Media Luna", "Niquero", "Pilón", "Río Cauto", "Yara"]
         }];
 
-             
-        const [filtro, setFiltro] = useState({
+    const AuxEstudioContext=useContext(estudioContext);
+    const {busqueda, estudios}=AuxEstudioContext;
+
+    console.log(estudios)
+
+    const[visible, setVisible]=useState(false);
+
+
+    const [filtro, setFiltro] = useState({
             provincia:'provincia',
             municipio: 'municipio'
         });
         
-        const axuArray= provinciaArray.filter(provincia=>provincia.nombre==filtro.provincia);
-        let municipioArray=[]
+    //obtener los municipios por provoncias-----------------------------------
+    const axuArray= provinciaArray.filter(provincia=>provincia.nombre==filtro.provincia);
+    let municipioArray=[]
 
-        if(axuArray[0]!=undefined){municipioArray=axuArray[0].municipios}else{ municipioArray=["none"]}
-           
+    if(axuArray[0]!=undefined){municipioArray=axuArray[0].municipios}else{ municipioArray=["none"]}
+    //--------------------------------------------------------------------------   
         
-        
-       
 
     const onSelectProvincia =(itemSelect)=>{
         console.log(itemSelect)
@@ -123,12 +131,29 @@ const Home = ()=>{
             })
         }
         
-
-    
-
     const menuSetVisible=()=>{
         setVisible(!visible);
-    }
+        }
+
+    //filtrar por busqueda-----------------
+    if(busqueda!==""){ 
+        estudioFilter = estudios.filter(estudio=> { return Object.values(estudio).join(" ").toLowerCase()
+                                                                                 .includes(busqueda.toLowerCase())}); 
+    }else{
+        estudioFilter= estudios;
+    } 
+    //--------------------------------------
+
+    //filtrar por provincia y municipio------------------
+    if(filtro.provincia!=='provincia'){ 
+        estudioFilter = estudios.filter(estudio=> estudio.provincia==filtro.provincia); 
+        if(filtro.municipio!='municipio'){
+            estudioFilter = estudios.filter(estudio=> estudio.municipio==filtro.municipio); 
+        }
+    }else{
+        estudioFilter= estudios;
+    } 
+    //--------------------------------------
 
     return (
         <div className='bg-gray-50'>
@@ -137,8 +162,6 @@ const Home = ()=>{
             <Link to={"/home"}>
                 <h1 className='text-4xl font-thin font-sans md:text-6xl bg-gray-600 text-white pl-1 rounded-sm'>Tatú<span className='font-bold text-gray-600 bg-gray-50  '>Arte</span></h1>
             </Link>
-
-           
             <UserOption />
         
         </header>
@@ -149,14 +172,14 @@ const Home = ()=>{
         </section>
 
         { visible  ?  
-          <div className="absolute  items-center rounded-md right-10 left-10 z-10 text-gray-600 contacto-link h-16 shadow-md md:w-80 md:mx-auto  ">
-            <div className='relative w-full flex items-center justify-between p-4 '>
-                <DropMenu icon={<FaCaretDown/>} iconItem={ <FaRegCompass/>} name={filtro.provincia} arreglo={provinciaArray} funcion={onSelectProvincia} />
-                <DropMenu icon={<FaCaretDown/>} iconItem={ <FaRegMap/>} name={filtro.municipio} arreglo={municipioArray} funcion={onSelectMunicipio}/>
-            </div>
+            <div className="absolute  items-center rounded-md right-10 left-10 z-10 text-gray-600 contacto-link h-16 shadow-md md:w-80 md:mx-auto  ">
+                <div className='relative w-full flex items-center justify-between p-4 '>
+                    <DropMenu icon={<FaCaretDown/>} iconItem={ <FaRegCompass/>} name={filtro.provincia} arreglo={provinciaArray} funcion={onSelectProvincia} />
+                    <DropMenu icon={<FaCaretDown/>} iconItem={ <FaRegMap/>} name={filtro.municipio} arreglo={municipioArray} funcion={onSelectMunicipio}/>
+                </div>
 
-        </div>   : null
-          } 
+            </div>   : null
+        } 
         <section className='grid gap-4 items-center  auto-rows-min    md:grid-cols-2 lg:grid-cols-3 md:gap-4  sectionHeigth  overflow-y-scroll p-1  w-11/12  md:w-4/5 mx-auto ' >
             <EstudioCard name={'La Tiza'} img={'img/test.jpg '} />
             <EstudioCard name={'Nemesis Ink Tattoo Studios'} img={'img/1.jpg '}/>
