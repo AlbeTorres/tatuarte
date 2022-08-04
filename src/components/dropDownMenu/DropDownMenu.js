@@ -14,9 +14,9 @@ const DropMenu = ({name, icon,arreglo, funcion , iconItem}) => {
     
 
   return (
-    <div className=' bg-gray-600 rounded-md text-white w-fit cursor-pointer'>
+    <div className=' bg-gray-600 rounded-md text-white w-28 md:w-32  cursor-pointer'>
         <div className='p-2 flex items-center justify-center ' onClick={ ()=>setOpen(!open) } >
-            <p className='ml-1'>    
+            <p className='ml-1 overflow-ellipsis whitespace-nowrap overflow-hidden'>    
                 {name}
             </p> 
             <div className='mt-1 ml-4'>
