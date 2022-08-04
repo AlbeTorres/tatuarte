@@ -2,7 +2,9 @@ import React,{useReducer} from "react";
 import estudioContext from './estudioContext';
 import estudioReducer from './estudioReducer';
 import { OBTENER_ESTUDIO_BY_CREATOR,
-OBTENER_BUSQUEDA } from "../../types";
+OBTENER_BUSQUEDA,
+REGISTRAR_ESTUDIO,
+OBTENER_ESTUDIOS } from "../../types";
 import clienteAxios from "../../config/axios";
 
 const EstudioState=props=>{
@@ -15,6 +17,15 @@ const EstudioState=props=>{
     }
 
     const[state, dispatch]= useReducer(estudioReducer,initialState);
+
+    //Registrar estudio
+    const registrarEstudio=(datos)=>{
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
 
 
     //Obtener estudio por id de usuario creador

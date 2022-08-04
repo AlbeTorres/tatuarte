@@ -14,51 +14,68 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import DropMenu from "../../components/dropDownMenu/DropDownMenu";
+import provinciaArray from "../../utils/provinciasCuba";
 
 const Estudioform = () => {
-  const provinciaArray = [
-    { icon: <FaRegCompass />, text: { type: "provincia", name: "Artemisa" } },
-    { icon: <FaRegCompass />, text: { type: "provincia", name: "Mayabeque" } },
-    { icon: <FaRegCompass />, text: { type: "provincia", name: "P. del Río" } },
-    { icon: <FaRegCompass />, text: { type: "provincia", name: "La Habana" } },
-    { icon: <FaRegCompass />, text: { type: "provincia", name: "Matanzas" } },
-  ];
-  const municipioArray = [
-    { icon: <FaRegMap />, text: { type: "municipio", name: "Artemisa" } },
-    { icon: <FaRegMap />, text: { type: "municipio", name: "Candelaria" } },
-    { icon: <FaRegMap />, text: { type: "municipio", name: "B. Honda" } },
-    { icon: <FaRegMap />, text: { type: "municipio", name: "Guanaja" } },
-    { icon: <FaRegMap />, text: { type: "municipio", name: "Alquizar" } },
-  ];
-
-  const [filtro, setFiltro] = useState({
+  
+  
+  const [estudioF, setEstudioF] = useState({
+    nombre:'',
+    img:'img/test.jpg',
     provincia: "provincia",
     municipio: "municipio",
+    pinteres:'',
+    twitter:'',
+    instagram:'',
+    facebook:'',
+    whatsapp:'',
   });
-
-  const onSelect = (itemSelect) => {
-    if (itemSelect.type !== "municipio") {
-      setFiltro({
-        ...filtro,
-        provincia: itemSelect.name,
-      });
-    } else {
-      setFiltro({
-        ...filtro,
-        municipio: itemSelect.name,
-      });
-    }
-  };
-
+  
   const [img,setImg]=useState("img/test.jpg");
 
-      const onImgSelect=e=>{
+   //obtener los municipios por provoncias-----------------------------------
+   const axuArray= provinciaArray.filter(provincia=>provincia.nombre==estudioF.provincia);
+   let municipioArray=[]
+
+   if(axuArray[0]!=undefined){municipioArray=axuArray[0].municipios}else{ municipioArray=["none"]}
+   //--------------------------------------------------------------------------   
+
+  const onSelectProvincia =(itemSelect)=>{
+    console.log(itemSelect)
+
+        setEstudioF({
+            ...estudioF,
+            provincia:itemSelect
+
+        })
+
+    }
+
+  const onSelectMunicipio =(itemSelect)=>{
+
+        setEstudioF({
+            ...estudioF,
+            municipio:itemSelect
+        })
+    }
+
+  const onImgSelect=e=>{
         let imgArray= e.target.files;
         let objectUrl = URL.createObjectURL(imgArray[0])
-        setImg(objectUrl);
+        setEstudioF({
+          ...estudioF,
+          img:objectUrl
+        });
       
 
-      }
+    }
+
+  const onChangeF=e=>{
+      setEstudioF({
+        ...estudioF,
+        [e.target.name]:e.target.value,
+      })
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -77,7 +94,7 @@ const Estudioform = () => {
           className="rounded-full w-20 h-20 relative block cursor-pointer"
         >
           <img
-            src={img}
+            src={estudioF.img}
             alt={""}
             className=" rounded-full w-full h-full object-cover"
           />
@@ -105,21 +122,24 @@ const Estudioform = () => {
             className="input-estudioForm"
             type={"text "}
             placeholder={"Nombre Estudio"}
+            name={'nombre'}
+            value={estudioF.nombre}
+            onChange={onChangeF}
           />
         </div>
 
         <div className="relative w-full flex items-center justify-between p-4 ">
           <DropMenu
             icon={<FaCaretDown />}
-            name={filtro.provincia}
+            name={estudioF.provincia}
             arreglo={provinciaArray}
-            funcion={onSelect}
+            funcion={onSelectProvincia}
           />
           <DropMenu
             icon={<FaCaretDown />}
-            name={filtro.municipio}
+            name={estudioF.municipio}
             arreglo={municipioArray}
-            funcion={onSelect}
+            funcion={onSelectMunicipio}
           />
         </div>
       </div>
@@ -132,6 +152,10 @@ const Estudioform = () => {
             className="input-estudioForm"
             type={"url"}
             placeholder={"Pinteres"}
+            name={'pinteres'}
+            value={estudioF.pinteres}
+            onChange={onChangeF}
+
           />
         </div>
         <div className=" input-estudioForm_div">
@@ -140,6 +164,9 @@ const Estudioform = () => {
             className="input-estudioForm"
             type={"url"}
             placeholder={"Twitter"}
+            name={'twitter'}
+            value={estudioF.twitter}
+            onChange={onChangeF}
           />
         </div>
         <div className=" input-estudioForm_div">
@@ -148,6 +175,9 @@ const Estudioform = () => {
             className="input-estudioForm"
             type={"url"}
             placeholder={"Instagram"}
+            name={'instagram'}
+            value={estudioF.instagram}
+            onChange={onChangeF}
           />
         </div>
         <div className=" input-estudioForm_div">
@@ -156,6 +186,9 @@ const Estudioform = () => {
             className="input-estudioForm"
             type={"url"}
             placeholder={"Facebook"}
+            name={'facebook'}
+            value={estudioF.facebook}
+            onChange={onChangeF}
           />
         </div>
         <div className=" input-estudioForm_div">
@@ -164,6 +197,9 @@ const Estudioform = () => {
             className="input-estudioForm"
             type={"url"}
             placeholder={"Whatsapp"}
+            name={'whatsapp'}
+            value={estudioF.whatsapp}
+            onChange={onChangeF}
           />
         </div>
       </div>
