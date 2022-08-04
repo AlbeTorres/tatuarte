@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./estudioForm.css";
+import '../../index.css'
 import {
   FaPlus,
   FaRegCompass,
@@ -15,6 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import DropMenu from "../../components/dropDownMenu/DropDownMenu";
 import provinciaArray from "../../utils/provinciasCuba";
+import { fileUpload } from "../../utils/subirImg";
 
 const Estudioform = () => {
   
@@ -29,6 +31,7 @@ const Estudioform = () => {
     instagram:'',
     facebook:'',
     whatsapp:'',
+    load:false,
   });
   
   const [img,setImg]=useState("img/test.jpg");
@@ -59,9 +62,19 @@ const Estudioform = () => {
         })
     }
 
-  const onImgSelect=e=>{
+  const onImgSelect=async e=>{
         let imgArray= e.target.files;
-        let objectUrl = URL.createObjectURL(imgArray[0])
+        // let objectUrl = URL.createObjectURL(imgArray[0])
+        setEstudioF({
+          ...estudioF,
+          load:true
+        })
+        let objectUrl= await fileUpload(imgArray[0]);
+        setEstudioF({
+          ...estudioF,
+          load:false
+        })
+        
         setEstudioF({
           ...estudioF,
           img:objectUrl
@@ -79,6 +92,7 @@ const Estudioform = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    
 
     console.log("onsubmit");
   };
@@ -88,7 +102,7 @@ const Estudioform = () => {
       onSubmit={onSubmit}
       className="flex flex-col items-center justify-center  mt-4 md:w-1/2 md:mx-auto lg:w-1/3 "
     >
-      <div className=" ">
+        { !estudioF.load ? <div className=" ">
         <label
           htmlFor="formImg"
           className="rounded-full w-20 h-20 relative block cursor-pointer"
@@ -109,6 +123,13 @@ const Estudioform = () => {
           accept="image/* "
         />
       </div>
+       :
+       <div className=" rounded-full w-20 h-20 relative block cursor-pointer bg-gray-300">
+        <div className="lds-dual-ring"></div>
+
+      </div>
+    }
+      
 
       <div
         className="border-2 border-gray-600 w-4/5 flex items-center justify-center flex-col my-2
