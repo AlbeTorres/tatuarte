@@ -1,13 +1,15 @@
 import React,{useReducer} from "react";
 import estudioContext from './estudioContext';
 import estudioReducer from './estudioReducer';
-import { OBTENER_ESTUDIO_BY_CREATOR } from "../../types";
+import { OBTENER_ESTUDIO_BY_CREATOR,
+OBTENER_BUSQUEDA } from "../../types";
 import clienteAxios from "../../config/axios";
 
 const EstudioState=props=>{
    const initialState={
         estudios:[],
         estudio:null,
+        busqueda:'',
 
 
     }
@@ -35,15 +37,24 @@ const EstudioState=props=>{
             console.log(error)
             
         }
+    }
 
-       
+    //Insertar termino de busqueda
+    const insertarTermBusqueda=(term)=>{
+        dispatch({
+            type: OBTENER_BUSQUEDA,
+            payload:term
+
+        })
     }
 
     return(
         <estudioContext.Provider
         value={{
             estudio:state.estudio,
+            busqueda:state.busqueda,
             obtenerEstudioByCreatorID,
+            insertarTermBusqueda,
 
         }}>
             {props.children}
